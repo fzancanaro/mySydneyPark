@@ -1,0 +1,24 @@
+page-login {
+  .login-optons {
+    text-decoration: none;
+    color: #fff8dc;
+  }
+  /* homescreen background image */
+  .background {
+    background: url('../assets/imgs/login-bench-blue.png') no-repeat center
+      center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+  }
+  .item.item-input {
+    //background-color: transparent;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0.8;
+  }
+  button {
+    background: none !important;
+    background-color: none !important;
+    box-shadow: none !important;
+  }
+}
