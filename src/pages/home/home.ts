@@ -9,16 +9,19 @@ import { UtilsProvider } from '../../providers/utils/utils';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController, public afAuth: AngularFireAuth, public utils: UtilsProvider) {
-
-  }
+  constructor(
+    public navCtrl: NavController,
+    public afAuth: AngularFireAuth,
+    public utils: UtilsProvider
+  ) {}
 
   doLogout() {
-    this.afAuth.auth.signOut().then(() => {
-      this.utils.showToast('You have been successfully logged out!');
-      this.navCtrl.setRoot(LoginPage);
-    }).catch(err => this.utils.showToast(err.message));
+    this.afAuth.auth
+      .signOut()
+      .then(() => {
+        this.utils.showToast('You have been successfully logged out!');
+        this.navCtrl.setRoot(LoginPage);
+      })
+      .catch(err => this.utils.showToast(err.message));
   }
-
 }
