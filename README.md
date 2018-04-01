@@ -3,11 +3,11 @@
 This is the official MyPark demo app, showcasing a variety of Ionic Framework components and native features.
 
 ## Table of Contents
- - [Welcome Page](#welcome)
- - [Login Page](#login)
- - [Register Page](#register)
- - [Forgot Password Page](#forgotPassword)
- - [CategoriesPage ](#categories)
+ - [Welcome Page]
+ - [Login Page]
+ - [Register Page]
+ - [Forgot Password Page]
+ - [CategoriesPage]
 
 
 ## Getting Started
