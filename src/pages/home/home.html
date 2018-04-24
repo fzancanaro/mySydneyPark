@@ -3,73 +3,41 @@
     <ion-toolbar color="dark">
       <ion-buttons start>
         <button ion-button icon-only color="primary" (click)="doLogout()">
-          <ion-icon color="dark" name="log-out"></ion-icon>
+          <ion-icon color="white" name="log-out"></ion-icon>
         </button>
       </ion-buttons>
       <ion-title>Home</ion-title>
     </ion-toolbar>
   </ion-navbar>
 </ion-header>
+  
+  <ion-content class="card-background-page">
+      <ion-list *ngFor="let facility of facilitiesModel">
+        <ion-card *ngIf="facility.addedToFilter === false">
+          <div class="img">
+            <img [src]="facility.imageURL" (click)="selectFacility(facility)">
+            <div class="card-title" (click)="selectFacility(facility)">{{facility.name}}</div>
+          </div>
+        </ion-card>
+        <ion-card *ngIf="facility.addedToFilter === true" data-status="true">
+            <div class="img">
+              <img [src]="facility.imageURL" (click)="selectFacility(facility)">
+              <div class="card-title" (click)="selectFacility(facility)">{{facility.name}}</div>
+            </div>
+          </ion-card>
+      </ion-list>
+    </ion-content>
 
-
-<ion-content class="card-background-page">
-
-
-  <ion-card>
-    <div class="img">
-      <img src="assets/imgs/playground.jpg" />
-      <div class="card-title">Playground</div>
-    </div>
-  </ion-card>
-
-
-  <ion-card>
-    <div class="img">
-      <img src="assets/imgs/barbecue2.jpg" />
-      <div class="card-title">Barbecue</div>
-    </div>
-  </ion-card>
-
-  <ion-card>
-    <div class="img">
-      <img src="assets/imgs/swimming.jpg" />
-      <div class="card-title">swimming</div>
-    </div>
-  </ion-card>
-
-
-  <ion-card>
-    <div class="img">
-      <img src="assets/imgs/Bike-Rides.jpeg" />
-      <div class="card-title">Ride a Bike</div>
-    </div>
-  </ion-card>
-
-  <ion-card>
-    <div class="img">
-      <img src="assets/imgs/gym.jpg" />
-      <div class="card-title">Outdoor Gym</div>
-    </div>
-  </ion-card>
-
-  <!-- <ion-fab right top>
-    <button ion-fab color="darkblue">
-      <ion-icon name="add"></ion-icon>
-    </button>
-    <ion-fab-list side="left">
-      <button ion-fab>
-        <ion-icon name="logo-facebook"></ion-icon>
-      </button>
-      <button ion-fab>
-        <ion-icon name="logo-twitter"></ion-icon>
-      </button>
-      <button ion-fab>
-        <ion-icon name="logo-vimeo"></ion-icon>
-      </button>
-      <button ion-fab>
-        <ion-icon name="logo-googleplus"></ion-icon>
-      </button>
-    </ion-fab-list>
-  </ion-fab> -->
-
-</ion-content>
+    <ion-footer class="footer">
+        <ion-row>
+          <ion-col text-center ion-text color="white">
+              {{selectedFacilities}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-center>
+              <button *ngIf="filterList.length == 0" ion-button round color="lightprimary" class="marginTop" disabled (click)="search()">Search!</button>
+              <button *ngIf="filterList.length > 0" ion-button round color="lightprimary" class="marginTop" (click)="search()">Search!</button>
+          </ion-col>
+        </ion-row>
+      </ion-footer>

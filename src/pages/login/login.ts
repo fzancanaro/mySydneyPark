@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController, Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { AngularFireAuth } from 'angularfire2/auth';
+
+import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 import { UtilsProvider } from '../../providers/utils/utils';
-import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
 import { ForgetPage } from '../forget/forget';
-import * as firebase from 'firebase/app';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the LoginPage page.
@@ -15,24 +15,38 @@ import * as firebase from 'firebase/app';
  * Ionic pages and navigation.
  */
 
+@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  private loginForm: FormGroup;
+  public _loginForm: FormGroup;
 
-  constructor(public navCtrl: NavController, private formBuilder: FormBuilder, public afAuth: AngularFireAuth, public utils: UtilsProvider, public plt: Platform) {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.compose([Validators.email, Validators.required])],
-      password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
-    });
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private _authService : AuthServiceProvider,
+    private _utils : UtilsProvider,
+    private formBuilder : FormBuilder) {
+      this._loginForm = this.formBuilder.group({
+        email: ['', Validators.compose([Validators.email, Validators.required])],
+        password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
+      });
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad LoginPage');
   }
 
   doLogin() {
-    this.afAuth.auth.signInWithEmailAndPassword(this.loginForm.value.email, this.loginForm.value.password)
-      .then(res => this.handleResponse())
-      .catch(err => this.handleError(err));
+    this._authService.emailLogin(this._loginForm.value.email, this._loginForm.value.password)
+      .then((user) => {
+         this._utils.showToast('Logged in successfully!');
+         console.log(user+" logged in!");
+         this.navCtrl.setRoot(HomePage);
+      })
+      .catch(error => console.log(error));
   }
 
   navForget() {
@@ -44,37 +58,31 @@ export class LoginPage {
   }
 
   doSocialLogin(social: string) {
-    let provider: any;
     if (social == 'google') {
-      provider = new firebase.auth.GoogleAuthProvider();
+      this._authService.googleLogin()
+      .then((credential) => {
+        this.navCtrl.setRoot(HomePage);
+        this._utils.showToast("Logged in successfully!");
+        console.log(credential.user+" logged in successfully!");
+
+      })
+      .catch(error => console.log(error));
     } else if (social == 'facebook') {
-      provider = new firebase.auth.FacebookAuthProvider();
+      this._authService.facebookLogin()
+      .then((credential) => {
+        this.navCtrl.setRoot(HomePage);
+        this._utils.showToast("Logged in successfully!");
+        console.log(credential.user+" logged in successfully!");
+      })
+      .catch(error => console.log(error));
     } else if (social == 'twitter') {
-      provider = new firebase.auth.TwitterAuthProvider();
-    } else {
-      provider = new firebase.auth.GithubAuthProvider();
-    }
-
-    if (this.plt.is('cordova')) {
-      this.afAuth.auth.signInWithRedirect(provider)
-        .then(res => this.handleResponse())
-        .catch(err => this.handleError(err));
-    }
-    else {
-      // It will work only in browser
-      this.afAuth.auth.signInWithPopup(provider)
-        .then(res => this.handleResponse())
-        .catch(err => this.handleError(err));
+      this._authService.twitterLogin()
+      .then((credential) => {        
+        this.navCtrl.setRoot(HomePage);
+        this._utils.showToast("Logged in successfully!");
+        console.log(credential.user+" logged in successfully!");
+      })
+      .catch(error => console.log(error));
     }
   }
-
-  handleResponse() {
-    this.utils.showToast('You are successfully logged in');
-    this.navCtrl.setRoot(HomePage);
-  }
-
-  handleError(err) {
-    this.utils.showToast(err.message)
-  }
-
 }

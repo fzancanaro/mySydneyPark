@@ -3,8 +3,11 @@ import { IonicPageModule } from 'ionic-angular';
 import { WelcomePage } from './welcome';
 
 @NgModule({
-  declarations: [WelcomePage],
-  imports: [IonicPageModule.forChild(WelcomePage)],
-  exports: [WelcomePage]
+  declarations: [
+    WelcomePage,
+  ],
+  imports: [
+    IonicPageModule.forChild(WelcomePage),
+  ],
 })
-export class WelcomeModule {}
+export class WelcomePageModule {}
