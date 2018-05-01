@@ -23,6 +23,9 @@ import { ForgetPage } from '../pages/forget/forget';
 import { RegisterPage } from '../pages/register/register';
 import { SearchResultPage } from '../pages/search-result/search-result';
 import { ParkDetailsPage } from './../pages/park-details/park-details';
+import { FavouritesPage } from '../pages/favourites/favourites';
+import { SettingsPage } from '../pages/settings/settings';
+import { SearchPage } from '../pages/search/search';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { ParkDetailsPage } from './../pages/park-details/park-details';
     ForgetPage,
     RegisterPage,
     SearchResultPage,
-    ParkDetailsPage
+    ParkDetailsPage,
+    FavouritesPage,
+    SettingsPage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +58,10 @@ import { ParkDetailsPage } from './../pages/park-details/park-details';
     ForgetPage,
     RegisterPage,
     SearchResultPage,
-    ParkDetailsPage
+    ParkDetailsPage,
+    FavouritesPage,
+    SettingsPage,
+    SearchPage
   ],
   providers: [
     StatusBar,
