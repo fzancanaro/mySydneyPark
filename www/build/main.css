@@ -60502,6 +60502,15 @@ ion-navbar.toolbar {
   background-color: DodgerBlue;
 }
 
+page-home .list-ios {
+  margin-bottom: 5px;
+}
+
+page-home .searchIcon {
+  margin-left: 15px;
+  color: white;
+}
+
 page-home .card-background-page {
   background-color: #393937;
 }
@@ -60735,6 +60744,10 @@ page-park-details ion-row ion-col .action-button {
   color: black;
 }
 
+page-search .card-background-page {
+  background-color: #393937;
+}
+
 page-search-result .card-background-page {
   background-color: #393937;
 }
@@ -60776,6 +60789,18 @@ page-search-result .parksNotFound {
   font-size: 1em;
   font-weight: bold;
   width: 100%;
+}
+
+page-settings .background {
+  background-color: #393937;
+  color: white;
+}
+
+page-settings .darkrow {
+  background-color: grey;
+  line-height: 50px;
+  color: white;
+  font-size: 12pt;
 }
 
 page-welcome .myView {

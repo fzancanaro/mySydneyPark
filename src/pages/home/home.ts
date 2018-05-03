@@ -8,6 +8,7 @@ import { UtilsProvider } from "../../providers/utils/utils";
 import { PreloaderProvider } from './../../providers/utils/preloader';
 import { LoginPage } from '../login/login';
 import { SearchResultPage } from '../search-result/search-result';
+import { SearchPage } from '../search/search';
 
 
 @Component({
@@ -141,6 +142,10 @@ export class HomePage {
       //let test : string = facility.name;
       //test = test.replace(/\s/g, '');
       console.log("searched pressed!");
+    }
+
+    openSearchPage() {
+      this.navCtrl.push(SearchPage)
     }
 
 }
