@@ -8,7 +8,14 @@ This is the official MyPark demo app, showcasing a variety of Ionic Framework co
 * Login Page
 * Register Page
 * Forgot Password Page
-* HomePage 
+* Home Page 
+* Search Result Page
+* Detail Park Search
+* Search Page
+* Review Page
+* Favoutites Page
+* Settings Page
+
 
 ## Getting Started
 
@@ -20,13 +27,7 @@ This is the official MyPark demo app, showcasing a variety of Ionic Framework co
 
 _Note: You may need to add “sudo” in front of any global commands to install the utilities._
 
-## Screen shot
-
-<img src="./src/assets/screens/welcome_screen.png" width="30%" alt="welcome_screen" >
-<img  src="./src/assets/screens/Login_screen.png" width="30%" alt="login_screen">
-<img src="./src/assets/screens/forgotPassword_Screen.png" width="30%" alt="forgotpassword_screen" >
-<img  src="./src/assets/screens/register_screen.png" width="30%" alt="register_screen">
-<img src="./src/assets/screens/search_screen.png" width="30%" alt="search_screen" >
+<img src="https://media.giphy.com/media/5eFuOxlzhQxosANscE/giphy.gif" width="40" height="40" />
 
 ## Deploying
 
