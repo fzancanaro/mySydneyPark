@@ -26,6 +26,9 @@ import { ParkDetailsPage } from './../pages/park-details/park-details';
 import { FavouritesPage } from '../pages/favourites/favourites';
 import { SettingsPage } from '../pages/settings/settings';
 import { SearchPage } from '../pages/search/search';
+import { ReviewPage } from '../pages/review/review';
+import { SocialSharing } from '@ionic-native/social-sharing';
+
 
 
 @NgModule({
@@ -40,7 +43,8 @@ import { SearchPage } from '../pages/search/search';
     ParkDetailsPage,
     FavouritesPage,
     SettingsPage,
-    SearchPage
+    SearchPage,
+    ReviewPage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,8 @@ import { SearchPage } from '../pages/search/search';
     ParkDetailsPage,
     FavouritesPage,
     SettingsPage,
-    SearchPage
+    SearchPage,
+    ReviewPage
   ],
   providers: [
     StatusBar,
@@ -70,7 +75,8 @@ import { SearchPage } from '../pages/search/search';
     DbServiceProvider,
     AuthServiceProvider,
     UtilsProvider,
-    PreloaderProvider
+    PreloaderProvider,
+    SocialSharing
   ]
 })
 export class AppModule {}

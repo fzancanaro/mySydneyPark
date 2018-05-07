@@ -14,6 +14,7 @@ import { SearchPage } from '../pages/search/search';
 import { SettingsPage } from '../pages/settings/settings';
 import { app } from 'firebase/app';
 
+
 @Component({
   templateUrl: 'app.html'
 })

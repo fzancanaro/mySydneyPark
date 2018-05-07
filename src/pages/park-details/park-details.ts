@@ -8,6 +8,8 @@ import { DbServiceProvider } from './../../providers/db-service/db-service';
 import { Park } from '../../models/park';
 import { Prohibition } from '../../models/prohibition';
 import { Facility } from './../../models/facility';
+import { ReviewPage } from '../review/review';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @IonicPage()
 @Component({
@@ -19,6 +21,7 @@ export class ParkDetailsPage {
   public parkDetails : Park;
   constructor(public navParams : NavParams,
     public navCtrl: NavController, 
+    private socialSharing: SocialSharing,
     public _dbService : DbServiceProvider, 
     public _authService : AuthServiceProvider,
     private _utilsService : UtilsProvider,
@@ -80,5 +83,10 @@ export class ParkDetailsPage {
     else {
       prohibition.hiddenRestriction = true;
     }
+  }
+
+  openReviewPage() {
+    this.navCtrl.push(ReviewPage)
+    console.log("ReviewPage pressed!");
   }
 }

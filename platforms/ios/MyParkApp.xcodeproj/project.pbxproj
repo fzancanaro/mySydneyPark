@@ -35,6 +35,10 @@
 		43A540BC558E41B983583674 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DAE1739E05475EAED78999 /* CDVSplashScreen.m */; };
 		CD57EA29BB854732A8AB69CA /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F425BB21164CDFA2A37296 /* CDVViewController+SplashScreen.m */; };
 		CED62E5BF1EB4D54BDB5301D /* CDVIonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 350B9E0BD2FF4742B700F292 /* CDVIonicKeyboard.m */; };
+		CB1A3481345143279005D8B4 /* NSString+SSURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A5D040FAD44A9E8B055F47 /* NSString+SSURLEncoding.m */; };
+		D5065EC5821848738F1960E4 /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 36EE0D686AD446E1BF6C727B /* SocialSharing.m */; };
+		FA0262C97F4C413DACFDBD70 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDB09402E55430DAF5C16B5 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D3346289A6FB422B86CFD2E9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AB59DA25DE4B6589965A27 /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +130,12 @@
 		49CDD6DF91ED4A7DB6F85871 /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		350B9E0BD2FF4742B700F292 /* CDVIonicKeyboard.m */ = {isa = PBXFileReference; name = "CDVIonicKeyboard.m"; path = "cordova-plugin-ionic-keyboard/CDVIonicKeyboard.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		22483814561F4456A931CCD5 /* CDVIonicKeyboard.h */ = {isa = PBXFileReference; name = "CDVIonicKeyboard.h"; path = "cordova-plugin-ionic-keyboard/CDVIonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		59A5D040FAD44A9E8B055F47 /* NSString+SSURLEncoding.m */ = {isa = PBXFileReference; name = "NSString+SSURLEncoding.m"; path = "cordova-plugin-x-socialsharing/NSString+SSURLEncoding.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		36EE0D686AD446E1BF6C727B /* SocialSharing.m */ = {isa = PBXFileReference; name = "SocialSharing.m"; path = "cordova-plugin-x-socialsharing/SocialSharing.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		0016DD9B2E544F079EE89A5F /* NSString+SSURLEncoding.h */ = {isa = PBXFileReference; name = "NSString+SSURLEncoding.h"; path = "cordova-plugin-x-socialsharing/NSString+SSURLEncoding.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		FFAC9EEDA0A14D2FBBF00C9B /* SocialSharing.h */ = {isa = PBXFileReference; name = "SocialSharing.h"; path = "cordova-plugin-x-socialsharing/SocialSharing.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		CFDB09402E55430DAF5C16B5 /* Social.framework */ = {isa = PBXFileReference; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		D7AB59DA25DE4B6589965A27 /* MessageUI.framework */ = {isa = PBXFileReference; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +146,8 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				5BF25BADB064458E84840D40 /* WebKit.framework in Frameworks */,
 				5E3E71379B40476C89434B06 /* libz.tbd in Frameworks */,
+				FA0262C97F4C413DACFDBD70 /* Social.framework in Frameworks */,
+				D3346289A6FB422B86CFD2E9 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +220,8 @@
 			children = (
 				79B89D2C7B874255A19DFC99 /* WebKit.framework */,
 				E70E84CFDF20412BAA5E928E /* libz.tbd */,
+				CFDB09402E55430DAF5C16B5 /* Social.framework */,
+				D7AB59DA25DE4B6589965A27 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,6 +290,10 @@
 				49CDD6DF91ED4A7DB6F85871 /* CDVViewController+SplashScreen.h */,
 				350B9E0BD2FF4742B700F292 /* CDVIonicKeyboard.m */,
 				22483814561F4456A931CCD5 /* CDVIonicKeyboard.h */,
+				59A5D040FAD44A9E8B055F47 /* NSString+SSURLEncoding.m */,
+				36EE0D686AD446E1BF6C727B /* SocialSharing.m */,
+				0016DD9B2E544F079EE89A5F /* NSString+SSURLEncoding.h */,
+				FFAC9EEDA0A14D2FBBF00C9B /* SocialSharing.h */,
 			);
 			name = Plugins;
 			path = MyParkApp/Plugins;
@@ -423,6 +441,8 @@
 				43A540BC558E41B983583674 /* CDVSplashScreen.m in Sources */,
 				CD57EA29BB854732A8AB69CA /* CDVViewController+SplashScreen.m in Sources */,
 				CED62E5BF1EB4D54BDB5301D /* CDVIonicKeyboard.m in Sources */,
+				CB1A3481345143279005D8B4 /* NSString+SSURLEncoding.m in Sources */,
+				D5065EC5821848738F1960E4 /* SocialSharing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

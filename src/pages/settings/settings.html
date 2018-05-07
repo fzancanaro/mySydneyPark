@@ -8,64 +8,41 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="background">
-  <ion-grid>
-    <!--VERSION INFORMATION SECTION-->
-    <ion-row>
-      <ion-col>
-        <div class="darkrow"><em>  &nbsp;VERSION INFORMATION</em></div>
-      </ion-col>
-    </ion-row>
-    
-    <ion-row>
-      <ion-col>
-        <div>App Version 1.0.0 June 2018 </div>
-      </ion-col>
-    </ion-row>
-    <br>
-    <!--CONTACT US SECTION-->
-    <ion-row>
-      <ion-col>
-        <div class="darkrow"><em>  &nbsp;CONTACT US</em></div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <div>MyPark is also available online at
-          www.myParkSydney.com
-        <br>
-        <br>
-          If you are having any problemas with the MyPark app or wish to make any suggestions, please contact us at team@mypark.com</div>
-      </ion-col>
-    </ion-row>
-<br>
-<!--NOTIFICATION SECTION-->
-    <ion-row>
-      <ion-col>
-        <div class="darkrow"><em>  &nbsp;NOTIFICATIONS</em></div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-            <ion-item >
-                <ion-label>Enable Push Notifications</ion-label>
+<ion-content class="background" >
+
+    <ion-item-group>
+        <ion-item-divider class="grey"><em>&nbsp;VERSION INFORMATION</em></ion-item-divider>
+        <ion-item class="background">App Version 1.0.0 June 2018</ion-item>
+      </ion-item-group>
+
+    <ion-item-group>
+          <ion-item-divider class="grey"><em>&nbsp;CONTACT US</em></ion-item-divider>
+          <ion-item class="background">MyPark is also available online  <br>at
+              www.myParkSydney.com
+            <br>
+            <br>
+              If you are having any problemas with the <br>
+               MyPark app or wish to make any suggestions, <br>
+               please contact us at team@mypark.com
+           </ion-item>
+      </ion-item-group>
+
+      <ion-item-group>
+          <ion-item-divider class="grey"><em>&nbsp;NOTIFICATIONS</em></ion-item-divider>
+          <ion-item class="background">
+            <ion-label>Enable Push Notifications</ion-label>
+            <ion-toggle value="foo" checked="true"></ion-toggle>
+          </ion-item>
+        </ion-item-group>
+
+        <ion-item-group>
+            <ion-item-divider class="grey"><em>  &nbsp;ACCOUNT</em></ion-item-divider>
+            <ion-item class="background">
+                <ion-label>Remove Account</ion-label>
                 <ion-toggle value="foo" checked="true"></ion-toggle>
               </ion-item>
-      </ion-col>
-    </ion-row>
-    <br>
-<!--ACCOUNT SECTION-->
-    <ion-row>
-      <ion-col>
-        <div class="darkrow"><em>  &nbsp;ACCOUNT</em></div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <div>Remove accont
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+          </ion-item-group>
+
+  
   
 </ion-content>

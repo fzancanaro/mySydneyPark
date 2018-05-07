@@ -61,7 +61,7 @@ export class AuthServiceProvider {
   }
 
   // Email / Password Registration
-  emailSignUp(email:string, password:string) : Promise<any> {
+  emailSignUp( email:string, password:string) : Promise<any> {
     return this._authService.auth.createUserWithEmailAndPassword(email, password);
   }
   

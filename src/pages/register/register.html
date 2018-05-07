@@ -5,24 +5,27 @@
     </ion-navbar>
   
 </ion-header>
-  
-  
-  <ion-content>
-  
+   
+  <ion-content class="background" scroll="false">
     <form [formGroup]="registerForm" (ngSubmit)="doRegister()">
   
       <ion-list>
-  
+
+          <ion-item>
+              <ion-label color="dark" floating>Name</ion-label>
+              <ion-input type="text" ></ion-input>
+            </ion-item>
+
         <ion-item>
-          <ion-label floating>Email</ion-label>
+          <ion-label color="dark" floating>Email</ion-label>
           <ion-input type="email" formControlName="email"></ion-input>
         </ion-item>
   
         <ion-item>
-          <ion-label floating>Password</ion-label>
+          <ion-label color="dark" floating>Password</ion-label>
           <ion-input type="password" formControlName="password"></ion-input>
         </ion-item>
-  
+   
       </ion-list>
   
       <div padding>
