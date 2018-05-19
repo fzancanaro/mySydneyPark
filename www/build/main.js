@@ -1,14 +1,14 @@
-webpackJsonp([11],{
+webpackJsonp([10],{
 
 /***/ 103:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_facility__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_facility__ = __webpack_require__(310);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_user__ = __webpack_require__(504);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_service_auth_service__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_db_service_db_service__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_utils_utils__ = __webpack_require__(42);
@@ -157,7 +157,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="blue">\n    <button ion-button menuToggle ion-buttons end>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-buttons start >\n      <button ion-button (click)="openSearchPage()">\n      <ion-icon name="search" class="searchIcon"></ion-icon>\n     </button>\n    </ion-buttons>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n  \n  <ion-content class="card-background-page">\n      <ion-list *ngFor="let facility of facilitiesModel">\n        <ion-card *ngIf="facility.addedToFilter === false">\n          <div class="img">\n            <img [src]="facility.imageURL" (click)="selectFacility(facility)">\n            <div class="card-title" (click)="selectFacility(facility)">{{facility.name}}</div>\n          </div>\n        </ion-card>\n        <ion-card *ngIf="facility.addedToFilter === true" data-status="true">\n            <div class="img">\n              <img [src]="facility.imageURL" (click)="selectFacility(facility)">\n              <div class="card-title" (click)="selectFacility(facility)">{{facility.name}}</div>\n            </div>\n          </ion-card>\n      </ion-list>\n    </ion-content>\n\n    <ion-footer class="footer">\n        <ion-row text-wrap>\n          <ion-col text-center ion-text color="white">\n              {{selectedFacilities}}\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col text-center>\n              <button *ngIf="filterList.length == 0" ion-button round color="lightprimary" class="marginTop" disabled (click)="search()">Search!</button>\n              <button *ngIf="filterList.length > 0" ion-button round color="lightprimary" class="marginTop" (click)="search()">Search!</button>\n          </ion-col>\n        </ion-row>\n      </ion-footer>\n'/*ion-inline-end:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="blue">\n    <button ion-button menuToggle ion-buttons end>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-buttons start >\n      <button ion-button (click)="openSearchPage()">\n      <ion-icon name="search" class="searchIcon"></ion-icon>\n     </button>\n    </ion-buttons>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n  \n  <ion-content class="card-background-page">\n      <ion-list *ngFor="let facility of facilitiesModel">\n        <ion-card *ngIf="facility.addedToFilter === false">\n          <div class="img">\n            <img [src]="facility.imageURL" (click)="selectFacility(facility)">\n            <div class="card-title" (click)="selectFacility(facility)">{{facility.name}}</div>\n          </div>\n        </ion-card>\n        <ion-card *ngIf="facility.addedToFilter === true" data-status="true">\n            <div class="img">\n              <img [src]="facility.imageURL" (click)="selectFacility(facility)">\n              <div class="card-title" (click)="selectFacility(facility)">{{facility.name}}</div>\n            </div>\n          </ion-card>\n      </ion-list>\n    </ion-content>\n\n    <ion-footer class="footer">\n        <ion-row text-wrap>\n          <ion-col text-center ion-text color="white">\n              {{selectedFacilities}}\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col text-center>\n              <button *ngIf="filterList.length == 0" ion-button round color="lightprimary" class="marginTop" disabled (click)="search()">Search!</button>\n              <button *ngIf="filterList.length > 0" ion-button round color="lightprimary" class="marginTop" (click)="search()">Search!</button>\n          </ion-col>\n        </ion-row>\n      </ion-footer>\n'/*ion-inline-end:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_5__providers_db_service_db_service__["a" /* DbServiceProvider */],
@@ -178,7 +178,7 @@ var HomePage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DbServiceProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase__ = __webpack_require__(272);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -291,7 +291,7 @@ var DbServiceProvider = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreloaderProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -355,7 +355,7 @@ var PreloaderProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -377,7 +377,7 @@ var SearchPage = /** @class */ (function () {
     };
     SearchPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-search',template:/*ion-inline-start:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/search/search.html"*/'<ion-header>\n  <ion-navbar color="blue">\n    <button ion-button menuToggle ion-buttons end>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Search</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="card-background-page">\n\n    \n        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n        <ion-list>\n          <ion-item *ngFor="let item of items">\n            {{ item }}\n            <ion-input type="text" placeholder="Search by Park Name or Postcode"></ion-input>\n          </ion-item>\n        </ion-list>\n        <ion-list>\n\n            <ion-item>\n              <ion-thumbnail item-start>\n                <img src="assets/imgs/SydneyPark.jpg">\n              </ion-thumbnail>\n              <h2>Sydney Park</h2>\n              <p>Alexandria NSW • 2015</p>\n              <button ion-button clear item-end>View</button>\n            </ion-item>\n        \n            <ion-item>\n              <ion-thumbnail item-start>\n                <img src="assets/imgs/VictoriaPark.jpg">\n              </ion-thumbnail>\n              <h2>Victoria Park</h2>\n              <p>Broadway NSW • 2008</p>\n              <button ion-button clear item-end>View</button>\n            </ion-item>\n        </ion-list>\n        </ion-content>\n           \n\n'/*ion-inline-end:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/search/search.html"*/,
+            selector: 'page-search',template:/*ion-inline-start:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/search/search.html"*/'<ion-header>\n  <ion-navbar color="blue">\n    <button ion-button menuToggle ion-buttons end>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Search</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="card-background-page">\n\n    \n        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n        <ion-list>\n          <ion-item *ngFor="let item of items">\n            {{ item }}\n            <ion-input type="text" placeholder="Search by Park Name or Postcode"></ion-input>\n          </ion-item>\n        </ion-list>\n        <ion-list>\n\n            <ion-item>\n              <ion-thumbnail item-start>\n                <img src="assets/imgs/SydneyPark.jpg">\n              </ion-thumbnail>\n              <h2>Sydney Park</h2>\n              <p>Alexandria NSW • 2015</p>\n              <button ion-button clear item-end>View</button>\n            </ion-item>\n        \n            <ion-item>\n              <ion-thumbnail item-start>\n                <img src="assets/imgs/VictoriaPark.jpg">\n              </ion-thumbnail>\n              <h2>Victoria Park</h2>\n              <p>Broadway NSW • 2008</p>\n              <button ion-button clear item-end>View</button>\n            </ion-item>\n        </ion-list>\n        </ion-content>\n           \n\n'/*ion-inline-end:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/search/search.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], SearchPage);
@@ -388,13 +388,58 @@ var SearchPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 199:
+/***/ 200:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavouritesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the FavouritesPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var FavouritesPage = /** @class */ (function () {
+    function FavouritesPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    FavouritesPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad FavouritesPage');
+    };
+    FavouritesPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-favourites',template:/*ion-inline-start:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/favourites/favourites.html"*/'\n<ion-header>\n  <ion-navbar color="blue">\n    <button ion-button menuToggle ion-buttons end>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Favoutites</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n    <ion-list>\n        <ion-item-sliding\n          *ngFor="let list of parks">\n          <ion-item\n            color="parkBackground"\n            [ngClass]="{alt: isAltBackground()}"\n            (click)="onViewPark(park)">\n            <h2>{{ quote.person }}</h2>\n            <p>{{ quote.text }}</p>\n          </ion-item>\n          <ion-item-options>\n            <button\n              ion-button\n              color="danger"\n              (click)="onRemoveFromFavorites(quote)">\n              <ion-icon name="trash"></ion-icon>\n              Delete\n            </button>\n          </ion-item-options>\n        </ion-item-sliding>\n      </ion-list>\n  \n\n</ion-content>\n'/*ion-inline-end:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/favourites/favourites.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], FavouritesPage);
+    return FavouritesPage;
+}());
+
+//# sourceMappingURL=favourites.js.map
+
+/***/ }),
+
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForgetPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service_auth_service__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_utils_utils__ = __webpack_require__(42);
@@ -438,7 +483,7 @@ var ForgetPage = /** @class */ (function () {
     };
     ForgetPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-forget',template:/*ion-inline-start:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/forget/forget.html"*/'<ion-header>\n\n    <ion-navbar>\n      <ion-title>Reset Password</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content class="background">\n  \n    <form [formGroup]="forgetForm" (ngSubmit)="doForget()">\n  \n      <ion-list>\n        <ion-item>\n          <ion-label floating>Email</ion-label>\n          <ion-input type="email" formControlName="email"></ion-input>\n        </ion-item>\n      </ion-list>\n  \n      <div padding>\n        <button ion-button color="primary" block type="submit" [disabled]="!forgetForm.valid">Forgot my password</button>\n      </div>\n    </form>\n  \n  </ion-content>'/*ion-inline-end:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/forget/forget.html"*/,
+            selector: 'page-forget',template:/*ion-inline-start:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/forget/forget.html"*/'<ion-header>\n\n    <ion-navbar>\n      <ion-title>Reset Password</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content class="background">\n  \n    <form [formGroup]="forgetForm" (ngSubmit)="doForget()">\n  \n      <ion-list>\n        <ion-item>\n          <ion-label floating>Email</ion-label>\n          <ion-input type="email" formControlName="email"></ion-input>\n        </ion-item>\n      </ion-list>\n  \n      <div padding>\n        <button ion-button color="primary" block type="submit" [disabled]="!forgetForm.valid">Forgot my password</button>\n      </div>\n    </form>\n  \n  </ion-content>'/*ion-inline-end:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/forget/forget.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -453,58 +498,13 @@ var ForgetPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 200:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavouritesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the FavouritesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var FavouritesPage = /** @class */ (function () {
-    function FavouritesPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    FavouritesPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad FavouritesPage');
-    };
-    FavouritesPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-favourites',template:/*ion-inline-start:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/favourites/favourites.html"*/'\n<ion-header>\n  <ion-navbar color="blue">\n    <button ion-button menuToggle ion-buttons end>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Favoutites</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n\n    <ion-list>\n        <ion-item-sliding\n          *ngFor="let list of parks">\n          <ion-item\n            color="parkBackground"\n            [ngClass]="{alt: isAltBackground()}"\n            (click)="onViewPark(park)">\n            <h2>{{ quote.person }}</h2>\n            <p>{{ quote.text }}</p>\n          </ion-item>\n          <ion-item-options>\n            <button\n              ion-button\n              color="danger"\n              (click)="onRemoveFromFavorites(quote)">\n              <ion-icon name="trash"></ion-icon>\n              Delete\n            </button>\n          </ion-item-options>\n        </ion-item-sliding>\n      </ion-list>\n  \n\n</ion-content>\n'/*ion-inline-end:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/favourites/favourites.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-    ], FavouritesPage);
-    return FavouritesPage;
-}());
-
-//# sourceMappingURL=favourites.js.map
-
-/***/ }),
-
 /***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service_auth_service__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_utils_utils__ = __webpack_require__(42);
@@ -551,7 +551,7 @@ var RegisterPage = /** @class */ (function () {
     };
     RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/register/register.html"*/'<ion-header>\n\n    <ion-navbar color="blue">\n      <ion-title>Register</ion-title>\n    </ion-navbar>\n  \n</ion-header>\n   \n  <ion-content class="background" scroll="false">\n    <form [formGroup]="registerForm" (ngSubmit)="doRegister()">\n  \n      <ion-list>\n\n          <ion-item>\n              <ion-label color="dark" floating>Name</ion-label>\n              <ion-input type="text" ></ion-input>\n            </ion-item>\n\n        <ion-item>\n          <ion-label color="dark" floating>Email</ion-label>\n          <ion-input type="email" formControlName="email"></ion-input>\n        </ion-item>\n  \n        <ion-item>\n          <ion-label color="dark" floating>Password</ion-label>\n          <ion-input type="password" formControlName="password"></ion-input>\n        </ion-item>\n   \n      </ion-list>\n  \n      <div padding>\n        <button ion-button color="primary" block type="submit" [disabled]="!registerForm.valid">Register</button>\n      </div>\n  \n    </form>\n  \n  </ion-content>'/*ion-inline-end:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/register/register.html"*/,
+            selector: 'page-register',template:/*ion-inline-start:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/register/register.html"*/'<ion-header>\n\n    <ion-navbar color="blue">\n      <ion-title>Register</ion-title>\n    </ion-navbar>\n  \n</ion-header>\n   \n  <ion-content class="background" scroll="false">\n    <form [formGroup]="registerForm" (ngSubmit)="doRegister()">\n  \n      <ion-list>\n\n          <ion-item>\n              <ion-label color="dark" floating>Name</ion-label>\n              <ion-input type="text" ></ion-input>\n            </ion-item>\n\n        <ion-item>\n          <ion-label color="dark" floating>Email</ion-label>\n          <ion-input type="email" formControlName="email"></ion-input>\n        </ion-item>\n  \n        <ion-item>\n          <ion-label color="dark" floating>Password</ion-label>\n          <ion-input type="password" formControlName="password"></ion-input>\n        </ion-item>\n   \n      </ion-list>\n  \n      <div padding>\n        <button ion-button color="primary" block type="submit" [disabled]="!registerForm.valid">Register</button>\n      </div>\n  \n    </form>\n  \n  </ion-content>'/*ion-inline-end:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/register/register.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -572,7 +572,7 @@ var RegisterPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchResultPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_utils_utils__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_utils_preloader__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_service_auth_service__ = __webpack_require__(53);
@@ -651,7 +651,7 @@ var SearchResultPage = /** @class */ (function () {
     };
     SearchResultPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-search-result',template:/*ion-inline-start:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/search-result/search-result.html"*/'<ion-header>\n    <ion-navbar color="primary">\n      <ion-buttons menu-toggle>\n          <button ion-button menuToggle icon-only color="primary">\n              <ion-icon color="white" name="menu"></ion-icon>\n            </button>\n      </ion-buttons>\n\n      <ion-title>Search Result</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n<ion-content class="card-background-page">\n    <div *ngIf="parksFiltered.length == 0" class="parksNotFound">\n        <h1>No Parks Found!</h1>\n    </div>\n    <div *ngIf="parksFiltered.length > 0">\n      <ion-list *ngFor="let park of parksFiltered">\n        <ion-card >\n          <div class="img">\n              <img [src]="park.images[0].imageURL" (click)="getParkDetails(park)">\n              <div class="card-title" (click)="getParkDetails(park)">{{park.name}}</div>\n          </div>        \n        </ion-card>\n        <div class="card-subtitle">\n            {{park.address.suburb}}  -  12 km away\n        </div>        \n      </ion-list>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/search-result/search-result.html"*/,
+            selector: 'page-search-result',template:/*ion-inline-start:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/search-result/search-result.html"*/'<ion-header>\n    <ion-navbar color="primary">\n      <ion-buttons menu-toggle>\n          <button ion-button menuToggle icon-only color="primary">\n              <ion-icon color="white" name="menu"></ion-icon>\n            </button>\n      </ion-buttons>\n\n      <ion-title>Search Result</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n<ion-content class="card-background-page">\n    <div *ngIf="parksFiltered.length == 0" class="parksNotFound">\n        <h1>No Parks Found!</h1>\n    </div>\n    <div *ngIf="parksFiltered.length > 0">\n      <ion-list *ngFor="let park of parksFiltered">\n        <ion-card >\n          <div class="img">\n              <img [src]="park.images[0].imageURL" (click)="getParkDetails(park)">\n              <div class="card-title" (click)="getParkDetails(park)">{{park.name}}</div>\n          </div>        \n        </ion-card>\n        <div class="card-subtitle">\n            {{park.address.suburb}}  -  12 km away\n        </div>        \n      </ion-list>\n    </div>\n</ion-content>\n'/*ion-inline-end:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/search-result/search-result.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
@@ -673,14 +673,15 @@ var SearchResultPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ParkDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_utils_utils__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_utils_preloader__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_auth_service_auth_service__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_db_service_db_service__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_prohibition__ = __webpack_require__(310);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_facility__ = __webpack_require__(309);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__review_review__ = __webpack_require__(364);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_prohibition__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_facility__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__review_review__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_social_sharing__ = __webpack_require__(312);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -699,14 +700,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ParkDetailsPage = /** @class */ (function () {
-    function ParkDetailsPage(navParams, navCtrl, _dbService, _authService, _utilsService, _preloader) {
+    function ParkDetailsPage(navParams, navCtrl, socialSharing, _dbService, _authService, _utilsService, _preloader, _platform) {
         this.navParams = navParams;
         this.navCtrl = navCtrl;
+        this.socialSharing = socialSharing;
         this._dbService = _dbService;
         this._authService = _authService;
         this._utilsService = _utilsService;
         this._preloader = _preloader;
+        this._platform = _platform;
         this.parkDetails = navParams.data;
     }
     ParkDetailsPage.prototype.ionViewDidLoad = function () {
@@ -764,14 +768,148 @@ var ParkDetailsPage = /** @class */ (function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__review_review__["a" /* ReviewPage */]);
         console.log("ReviewPage pressed!");
     };
+    // facebook share configuration
+    ParkDetailsPage.prototype.facebookShare = function (parkDetails) {
+        var _this = this;
+        var image = parkDetails.images[0].imageURL;
+        var url = parkDetails.contact.officialWebsite;
+        if (this._platform.is("ios")) {
+            this.socialSharing.canShareVia('com.apple.social.facebook', null, null, image, url).then(function () {
+                _this.facebookIosShare(image, url);
+            })
+                .catch(function () {
+                _this._utilsService.showToast("Facebook not available");
+            });
+        }
+        else if (this._platform.is("android")) {
+            this.socialSharing.canShareVia('com.facebook.katana', null, null, null, url).then(function () {
+                _this.facebookAndroidShare(url);
+            })
+                .catch(function () {
+                _this._utilsService.showToast("Facebook not available!");
+            });
+        }
+        else {
+            console.error("Facebook share not available in this platform");
+            this._utilsService.showToast("Share not supported in this platform");
+        }
+    };
+    ParkDetailsPage.prototype.facebookIosShare = function (image, url) {
+        var _this = this;
+        this.socialSharing.shareViaFacebook(null, image, url).then(function () {
+            console.log("shareViaFacebook: Success");
+            _this._utilsService.showToast("Sharing Success!");
+        }).catch(function (er) {
+            console.error("shareViaFacebook: failed");
+            _this._utilsService.showToast("Sharing failed!");
+        });
+    };
+    ParkDetailsPage.prototype.facebookAndroidShare = function (url) {
+        var _this = this;
+        this.socialSharing.shareViaFacebook(null, null, url).then(function () {
+            console.log("shareViaFacebook: Success");
+            _this._utilsService.showToast("Sharing Success!");
+        }).catch(function (er) {
+            console.error("shareViaFacebook: failed");
+            _this._utilsService.showToast("Sharing failed!");
+        });
+    };
+    // Twitter share configuration
+    ParkDetailsPage.prototype.twitterShare = function (parkDetails) {
+        var _this = this;
+        var url = parkDetails.contact.officialWebsite;
+        var message = "Check this Park features! It is awsome!";
+        if (this._platform.is("ios")) {
+            // this.socialSharing.canShareVia('com.apple.social.twitter',message, null, null, null).then(() =>  {
+            //   this.twitterIosShare(message);
+            // })
+            // .catch(() =>  {
+            //   this._utilsService.showToast("Twitter not available");
+            // })
+            this.twitterIosShare(message, url);
+        }
+        else if (this._platform.is("android")) {
+            this.socialSharing.canShareVia('twitter', message, null, null, url).then(function () {
+                _this.twitterAndroidShare(message, url);
+            })
+                .catch(function () {
+                _this._utilsService.showToast("Twitter not available!");
+            });
+        }
+        else {
+            console.error("Twitter share not available in this platform");
+            this._utilsService.showToast("Share not supported in this platform");
+        }
+    };
+    ParkDetailsPage.prototype.twitterAndroidShare = function (message, url) {
+        var _this = this;
+        this.socialSharing.shareViaTwitter(message, null, url).then(function () {
+            console.log("shareViaTwitter: Success");
+            _this._utilsService.showToast("Sharing Success!");
+        }).catch(function (er) {
+            console.error("shareViaTwitter: failed");
+            _this._utilsService.showToast("Sharing failed!");
+        });
+    };
+    ParkDetailsPage.prototype.twitterIosShare = function (message, url) {
+        var _this = this;
+        this.socialSharing.shareViaTwitter(message, null, url).then(function () {
+            console.log("shareViaTwitter: Success");
+            _this._utilsService.showToast("Sharing Success!");
+        }).catch(function (er) {
+            console.error("shareViaTwitter: failed");
+            _this._utilsService.showToast("Sharing failed!");
+        });
+    };
+    // Instagram share configuration
+    ParkDetailsPage.prototype.instagramShare = function (parkDetails) {
+        var _this = this;
+        var image = parkDetails.images[0].imageURL;
+        if (this._platform.is("ios")) {
+            this.socialSharing.canShareVia('instagram', null, null, image, null).then(function () {
+                _this.instagramSharing(image);
+            })
+                .catch(function () {
+                _this._utilsService.showToast("Instagram not available");
+            });
+        }
+        else if (this._platform.is("android")) {
+            this.socialSharing.canShareVia('instagram', null, null, image, null).then(function () {
+                _this.instagramSharing(image);
+            })
+                .catch(function () {
+                _this._utilsService.showToast("Instagram not available!");
+            });
+        }
+        else {
+            console.error("Instagram share not available in this platform");
+            this._utilsService.showToast("Share not supported in this platform");
+        }
+    };
+    ParkDetailsPage.prototype.instagramSharing = function (image) {
+        var _this = this;
+        this.socialSharing.shareViaInstagram(null, image).then(function () {
+            console.log("shareViaInstagram: Success");
+            _this._utilsService.showToast("Sharing Success!");
+        }).catch(function (er) {
+            console.error("shareViaInstagram: failed");
+            _this._utilsService.showToast("Sharing failed!");
+        });
+    };
     ParkDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-park-details',template:/*ion-inline-start:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/park-details/park-details.html"*/'<ion-header>\n    <ion-navbar color="primary">\n      <ion-title>Park Details</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n  <ion-content class="background-page">\n\n      <ion-fab top right edge>\n        <button ion-fab mini color="danger">\n          <ion-icon small name="md-share"></ion-icon>\n        </button>\n        <ion-fab-list>\n          <button ion-fab>\n            <ion-icon name="logo-facebook"></ion-icon>\n          </button>\n          <button ion-fab>\n            <ion-icon name="logo-twitter"></ion-icon>\n          </button>\n          <button ion-fab>\n            <ion-icon name="logo-vimeo"></ion-icon>\n          </button>\n          <button ion-fab>\n            <ion-icon name="logo-googleplus"></ion-icon>\n          </button>\n        </ion-fab-list>\n      </ion-fab>\n    \n      <ion-card class="adv-map">\n        <ion-card-header text-wrap class="park-name">\n          {{parkDetails.name}}\n          <div class="star-rate">\n            <ion-icon *ngFor="let starName of parkDetails.starRatingArray" [name]="starName"></ion-icon>\n            <div class="rate-text">\n                ({{parkDetails.parkRating | number:\'1.1-1\'}})\n                {{parkDetails.rating.numberOfRatings}}\n            </div>\n          </div>\n        </ion-card-header>\n          <ion-slides>\n            <ion-slide  *ngFor="let image of parkDetails.images; let i:index">\n              <ion-row>\n                <ion-col col-12 class="img">\n                    <img [src]="image.imageURL">\n                </ion-col>\n              </ion-row>\n            </ion-slide>\n          </ion-slides>\n          <ion-card-title text-wrap>\n            {{parkDetails.address.suburb}}  -  12 Km away\n          </ion-card-title>\n        <!-- <ion-item actions>\n          <span ion-text item-start color="secondary" class="item-bold">18 min</span>\n          <span ion-text item-start color="subtle">(2.6 mi)</span>\n          <button ion-button color="primary" clear item-end icon-start>\n            <ion-icon name=\'navigate\'></ion-icon>\n            Start\n          </button>\n        </ion-item> -->\n    \n      </ion-card>\n    \n      <ion-row no-padding>\n        <ion-col text-center>\n          \n          <button class="action-button" ion-button (click)="openReviewPage()" small round icon-start  >\n            <ion-icon name=\'chatboxes\'></ion-icon>\n            Review\n          </button>\n       \n        </ion-col>\n        <ion-col text-center>\n          <button class="action-button" ion-button small round icon-start>\n            <ion-icon name=\'star-half\'></ion-icon>\n            Rate\n          </button>\n        </ion-col>    \n        <ion-col text-center>\n          <button class="action-button" ion-button small round icon-start>\n            <ion-icon name=\'heart\'></ion-icon>\n            Favourite\n          </button>\n        </ion-col>\n      </ion-row>\n    \n      <ion-card class="adv-map">\n        <ion-card-header text-wrap class="park-full-address">\n          {{parkDetails.address.fullAddress}}        \n        </ion-card-header>\n        <div class="map">\n          <img src="assets/imgs/advance-card-map-paris.png">\n        </div>\n        <ion-card-title>\n          <ion-row no-padding>\n            <ion-col>\n                <span ion-text item-end clear color="secondary" class="item-bold">26 min</span>\n            </ion-col>\n            <ion-col>\n                <span ion-text clear color="subtle">(8.1 mi)</span>\n            </ion-col>\n            <ion-col>\n                <button ion-button color="secondary" clear icon-start>\n                    <ion-icon name=\'navigate\'></ion-icon>\n                    Start\n                  </button>\n            </ion-col>\n          </ion-row>\n            <!-- <span ion-text item-start color="secondary" class="item-bold">26 min</span>\n            <span ion-text item-start color="subtle">(8.1 mi)</span>\n            <button ion-button color="secondary" clear item-end icon-start>\n              <ion-icon name=\'navigate\'></ion-icon>\n              Start\n            </button> -->\n        </ion-card-title>    \n      </ion-card>\n    \n      <ion-list no-border>    \n        <ion-list-header text-center>\n          Facilities\n        </ion-list-header>    \n        <ion-item *ngFor="let facility of parkDetails.facilities">\n            <div class="fac-pro-ico">\n                <img [src]="facility.iconURL">\n            </div>\n          {{facility.id}}\n          <ion-note item-end>\n            {{facility.quantity}}\n          </ion-note>\n        </ion-item>\n      </ion-list>\n    \n    \n     <ion-list no-border>    \n        <ion-list-header text-center>\n          Prohibitions\n        </ion-list-header>    \n        <ion-item *ngFor="let prohibition of parkDetails.prohibitions">\n            <div class="fac-pro-ico">\n                <img [src]="prohibition.iconURL">\n            </div>\n          {{prohibition.id}}\n            <ion-note item-end *ngIf=\'prohibition.restriction\'>\n              <img [src]="prohibition.iconAlertURL" (click)="viewRestriction(prohibition)">\n            </ion-note>\n            <ion-item [hidden]="prohibition.hiddenRestriction">\n              <ion-note item-middle text-wrap>\n                {{prohibition.restriction}}\n              </ion-note>\n            </ion-item>\n        </ion-item>\n      </ion-list>   \n  </ion-content>\n'/*ion-inline-end:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/park-details/park-details.html"*/,
+            selector: 'page-park-details',template:/*ion-inline-start:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/park-details/park-details.html"*/'<ion-header>\n    <ion-navbar color="primary">\n      <ion-title>Park Details</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n  <ion-content class="background-page">\n\n    <ion-fab top right edge>\n      <button ion-fab mini color="danger">\n        <ion-icon small name="md-share"></ion-icon>\n      </button>\n      <ion-fab-list>\n        <button ion-fab (click)="facebookShare(parkDetails)">\n          <ion-icon name="logo-facebook"></ion-icon>\n        </button>\n        <button ion-fab (click)="twitterShare(parkDetails)">\n          <ion-icon name="logo-twitter"></ion-icon>\n        </button>\n        <button ion-fab (click)="instagramShare(parkDetails)">\n          <ion-icon name="logo-instagram"></ion-icon>\n        </button>\n      </ion-fab-list>\n    </ion-fab>\n    \n      <ion-card class="adv-map">\n        <ion-card-header text-wrap class="park-name">\n          {{parkDetails.name}}\n          <div class="star-rate">\n            <ion-icon *ngFor="let starName of parkDetails.starRatingArray" [name]="starName"></ion-icon>\n            <div class="rate-text">\n                ({{parkDetails.parkRating | number:\'1.1-1\'}})\n                {{parkDetails.rating.numberOfRatings}}\n            </div>\n          </div>\n        </ion-card-header>\n          <ion-slides>\n            <ion-slide  *ngFor="let image of parkDetails.images; let i:index">\n              <ion-row>\n                <ion-col col-12 class="img">\n                    <img [src]="image.imageURL">\n                </ion-col>\n              </ion-row>\n            </ion-slide>\n          </ion-slides>\n          <ion-card-title text-wrap>\n            {{parkDetails.address.suburb}}  -  12 Km away\n          </ion-card-title>\n        <!-- <ion-item actions>\n          <span ion-text item-start color="secondary" class="item-bold">18 min</span>\n          <span ion-text item-start color="subtle">(2.6 mi)</span>\n          <button ion-button color="primary" clear item-end icon-start>\n            <ion-icon name=\'navigate\'></ion-icon>\n            Start\n          </button>\n        </ion-item> -->\n    \n      </ion-card>\n    \n      <ion-row no-padding>\n        <ion-col text-center>\n          \n          <button class="action-button" ion-button (click)="openReviewPage()" small round icon-start  >\n            <ion-icon name=\'chatboxes\'></ion-icon>\n            Review\n          </button>\n       \n        </ion-col>\n        <ion-col text-center>\n          <button class="action-button" ion-button small round icon-start>\n            <ion-icon name=\'star-half\'></ion-icon>\n            Rate\n          </button>\n        </ion-col>    \n        <ion-col text-center>\n          <button class="action-button" ion-button small round icon-start>\n            <ion-icon name=\'heart\'></ion-icon>\n            Favourite\n          </button>\n        </ion-col>\n      </ion-row>\n    \n      <ion-card class="adv-map">\n        <ion-card-header text-wrap class="park-full-address">\n          {{parkDetails.address.fullAddress}}        \n        </ion-card-header>\n        <div class="map">\n          <img src="assets/imgs/advance-card-map-paris.png">\n        </div>\n        <ion-card-title>\n          <ion-row no-padding>\n            <ion-col>\n                <span ion-text item-end clear color="secondary" class="item-bold">26 min</span>\n            </ion-col>\n            <ion-col>\n                <span ion-text clear color="subtle">(8.1 mi)</span>\n            </ion-col>\n            <ion-col>\n                <button ion-button color="secondary" clear icon-start>\n                    <ion-icon name=\'navigate\'></ion-icon>\n                    Start\n                  </button>\n            </ion-col>\n          </ion-row>\n            <!-- <span ion-text item-start color="secondary" class="item-bold">26 min</span>\n            <span ion-text item-start color="subtle">(8.1 mi)</span>\n            <button ion-button color="secondary" clear item-end icon-start>\n              <ion-icon name=\'navigate\'></ion-icon>\n              Start\n            </button> -->\n        </ion-card-title>    \n      </ion-card>\n    \n      <ion-list no-border>    \n        <ion-list-header text-center>\n          Facilities\n        </ion-list-header>    \n        <ion-item *ngFor="let facility of parkDetails.facilities">\n            <div class="fac-pro-ico">\n                <img [src]="facility.iconURL">\n            </div>\n          {{facility.id}}\n          <ion-note item-end>\n            {{facility.quantity}}\n          </ion-note>\n        </ion-item>\n      </ion-list>\n    \n    \n     <ion-list no-border>    \n        <ion-list-header text-center>\n          Prohibitions\n        </ion-list-header>    \n        <ion-item *ngFor="let prohibition of parkDetails.prohibitions">\n            <div class="fac-pro-ico">\n                <img [src]="prohibition.iconURL">\n            </div>\n          {{prohibition.id}}\n            <ion-note item-end *ngIf=\'prohibition.restriction\'>\n              <img [src]="prohibition.iconAlertURL" (click)="viewRestriction(prohibition)">\n            </ion-note>\n            <ion-item [hidden]="prohibition.hiddenRestriction">\n              <ion-note item-middle text-wrap>\n                {{prohibition.restriction}}\n              </ion-note>\n            </ion-item>\n        </ion-item>\n      </ion-list>   \n  </ion-content>\n'/*ion-inline-end:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/park-details/park-details.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__providers_db_service_db_service__["a" /* DbServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_db_service_db_service__["a" /* DbServiceProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__providers_auth_service_auth_service__["a" /* AuthServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_auth_service_auth_service__["a" /* AuthServiceProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__providers_utils_utils__["a" /* UtilsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_utils_utils__["a" /* UtilsProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3__providers_utils_preloader__["a" /* PreloaderProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_utils_preloader__["a" /* PreloaderProvider */]) === "function" && _f || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_9__ionic_native_social_sharing__["a" /* SocialSharing */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_db_service_db_service__["a" /* DbServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_auth_service_auth_service__["a" /* AuthServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_utils_utils__["a" /* UtilsProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_utils_preloader__["a" /* PreloaderProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */]])
     ], ParkDetailsPage);
     return ParkDetailsPage;
-    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=park-details.js.map
@@ -782,9 +920,54 @@ var ParkDetailsPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the ReviewPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ReviewPage = /** @class */ (function () {
+    function ReviewPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    ReviewPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ReviewPage');
+    };
+    ReviewPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-review',template:/*ion-inline-start:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/review/review.html"*/'<ion-header>\n    <ion-navbar color="blue">\n      <button ion-button menuToggle ion-buttons end>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Review</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/review/review.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
+    ], ReviewPage);
+    return ReviewPage;
+}());
+
+//# sourceMappingURL=review.js.map
+
+/***/ }),
+
+/***/ 206:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -812,7 +995,7 @@ var SettingsPage = /** @class */ (function () {
     };
     SettingsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-settings',template:/*ion-inline-start:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/settings/settings.html"*/'<ion-header>\n  <ion-navbar color="blue">\n    <button ion-button menuToggle ion-buttons end>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  \n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="background" >\n\n    <ion-item-group>\n        <ion-item-divider class="grey"><em>&nbsp;VERSION INFORMATION</em></ion-item-divider>\n        <ion-item class="background">App Version 1.0.0 June 2018</ion-item>\n      </ion-item-group>\n\n    <ion-item-group>\n          <ion-item-divider class="grey"><em>&nbsp;CONTACT US</em></ion-item-divider>\n          <ion-item class="background">MyPark is also available online  <br>at\n              www.myParkSydney.com\n            <br>\n            <br>\n              If you are having any problemas with the <br>\n               MyPark app or wish to make any suggestions, <br>\n               please contact us at team@mypark.com\n           </ion-item>\n      </ion-item-group>\n\n      <ion-item-group>\n          <ion-item-divider class="grey"><em>&nbsp;NOTIFICATIONS</em></ion-item-divider>\n          <ion-item class="background">\n            <ion-label>Enable Push Notifications</ion-label>\n            <ion-toggle value="foo" checked="true"></ion-toggle>\n          </ion-item>\n        </ion-item-group>\n\n        <ion-item-group>\n            <ion-item-divider class="grey"><em>  &nbsp;ACCOUNT</em></ion-item-divider>\n            <ion-item class="background">\n                <ion-label>Remove Account</ion-label>\n                <ion-toggle value="foo" checked="true"></ion-toggle>\n              </ion-item>\n          </ion-item-group>\n\n  \n  \n</ion-content>\n'/*ion-inline-end:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/settings/settings.html"*/,
+            selector: 'page-settings',template:/*ion-inline-start:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/settings/settings.html"*/'<ion-header>\n  <ion-navbar color="blue">\n    <button ion-button menuToggle ion-buttons end>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  \n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="background" >\n\n    <ion-item-group>\n        <ion-item-divider class="grey"><em>&nbsp;VERSION INFORMATION</em></ion-item-divider>\n        <ion-item class="background">App Version 1.0.0 June 2018</ion-item>\n      </ion-item-group>\n\n    <ion-item-group>\n          <ion-item-divider class="grey"><em>&nbsp;CONTACT US</em></ion-item-divider>\n          <ion-item class="background">MyPark is also available online  <br>at\n              www.myParkSydney.com\n            <br>\n            <br>\n              If you are having any problemas with the <br>\n               MyPark app or wish to make any suggestions, <br>\n               please contact us at team@mypark.com\n           </ion-item>\n      </ion-item-group>\n\n      <ion-item-group>\n          <ion-item-divider class="grey"><em>&nbsp;NOTIFICATIONS</em></ion-item-divider>\n          <ion-item class="background">\n            <ion-label>Enable Push Notifications</ion-label>\n            <ion-toggle value="foo" checked="true"></ion-toggle>\n          </ion-item>\n        </ion-item-group>\n\n        <ion-item-group>\n            <ion-item-divider class="grey"><em>  &nbsp;ACCOUNT</em></ion-item-divider>\n            <ion-item class="background">\n                <ion-label>Remove Account</ion-label>\n                <ion-toggle value="foo" checked="true"></ion-toggle>\n              </ion-item>\n          </ion-item-group>\n\n  \n  \n</ion-content>\n'/*ion-inline-end:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/settings/settings.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], SettingsPage);
@@ -823,13 +1006,13 @@ var SettingsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 206:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WelcomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(85);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -862,7 +1045,7 @@ var WelcomePage = /** @class */ (function () {
     };
     WelcomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-welcome',template:/*ion-inline-start:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/welcome/welcome.html"*/'<ion-content padding class="myView" id="welcome">\n\n  <img src="assets/imgs/novoLogo.png" class="logo" align="middle" />\n  <h1 align="center"> Welcome </h1>\n  <h2 align="center">Discover great Parks areas and opportunities</h2>\n\n  <button ion-button block color="lightprimary" class="marginTop" (click)="start()">Get Started</button>\n</ion-content>\n'/*ion-inline-end:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/welcome/welcome.html"*/,
+            selector: 'page-welcome',template:/*ion-inline-start:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/welcome/welcome.html"*/'<ion-content padding class="myView" id="welcome">\n\n  <img src="assets/imgs/novoLogo.png" class="logo" align="middle" />\n  <h1 align="center"> Welcome </h1>\n  <h2 align="center">Discover great Parks areas and opportunities</h2>\n\n  <button ion-button block color="lightprimary" class="marginTop" (click)="start()">Get Started</button>\n</ion-content>\n'/*ion-inline-end:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/welcome/welcome.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], WelcomePage);
@@ -873,7 +1056,7 @@ var WelcomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 216:
+/***/ 217:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -886,56 +1069,52 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 216;
+webpackEmptyAsyncContext.id = 217;
 
 /***/ }),
 
-/***/ 260:
+/***/ 261:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/favourites/favourites.module": [
-		586,
-		10
-	],
-	"../pages/forget/forget.module": [
 		585,
 		9
 	],
-	"../pages/information/information.module": [
-		587,
+	"../pages/forget/forget.module": [
+		586,
 		8
 	],
 	"../pages/login/login.module": [
-		588,
+		587,
 		7
 	],
 	"../pages/park-details/park-details.module": [
-		589,
+		594,
 		6
 	],
 	"../pages/register/register.module": [
-		590,
+		588,
 		5
 	],
 	"../pages/review/review.module": [
-		591,
+		589,
 		4
 	],
 	"../pages/search-result/search-result.module": [
-		592,
+		590,
 		3
 	],
 	"../pages/search/search.module": [
-		594,
+		591,
 		2
 	],
 	"../pages/settings/settings.module": [
-		593,
+		592,
 		1
 	],
 	"../pages/welcome/welcome.module": [
-		595,
+		593,
 		0
 	]
 };
@@ -950,12 +1129,12 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 260;
+webpackAsyncContext.id = 261;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 309:
+/***/ 310:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -979,7 +1158,7 @@ var Facility = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 310:
+/***/ 311:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1012,51 +1191,6 @@ var Prohibition = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 364:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ReviewPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the ReviewPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ReviewPage = /** @class */ (function () {
-    function ReviewPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    ReviewPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ReviewPage');
-    };
-    ReviewPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-review',template:/*ion-inline-start:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/review/review.html"*/'<ion-header>\n    <ion-navbar color="blue">\n      <button ion-button menuToggle ion-buttons end>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Review</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/review/review.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
-    ], ReviewPage);
-    return ReviewPage;
-}());
-
-//# sourceMappingURL=review.js.map
-
-/***/ }),
-
 /***/ 365:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1078,9 +1212,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(350);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(354);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_db_service_db_service__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_auth_service_auth_service__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_utils_utils__ = __webpack_require__(42);
@@ -1091,22 +1225,24 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_angularfire2_firestore__ = __webpack_require__(533);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_component__ = __webpack_require__(584);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_home_home__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_welcome_welcome__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_welcome_welcome__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_login_login__ = __webpack_require__(85);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_forget_forget__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_forget_forget__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_register_register__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_search_result_search_result__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_park_details_park_details__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_favourites_favourites__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_settings_settings__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_settings_settings__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_search_search__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_review_review__ = __webpack_require__(364);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_review_review__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_social_sharing__ = __webpack_require__(312);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1155,17 +1291,16 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/forget/forget.module#ForgetPageModule', name: 'ForgetPage', segment: 'forget', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/favourites/favourites.module#FavouritesPageModule', name: 'FavouritesPage', segment: 'favourites', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/information/information.module#InformationPageModule', name: 'InformationPage', segment: 'information', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/forget/forget.module#ForgetPageModule', name: 'ForgetPage', segment: 'forget', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/park-details/park-details.module#ParkDetailsPageModule', name: 'ParkDetailsPage', segment: 'park-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/review/review.module#ReviewPageModule', name: 'ReviewPage', segment: 'review', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/search-result/search-result.module#SearchResultPageModule', name: 'SearchResultPage', segment: 'search-result', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/settings/settings.module#SettingsPageModule', name: 'SettingsPage', segment: 'settings', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/search/search.module#SearchPageModule', name: 'SearchPage', segment: 'search', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/settings/settings.module#SettingsPageModule', name: 'SettingsPage', segment: 'settings', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/park-details/park-details.module#ParkDetailsPageModule', name: 'ParkDetailsPage', segment: 'park-details', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_10_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_9__config_environment__["a" /* firebaseConfig */]),
@@ -1194,7 +1329,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_5__providers_db_service_db_service__["a" /* DbServiceProvider */],
                 __WEBPACK_IMPORTED_MODULE_6__providers_auth_service_auth_service__["a" /* AuthServiceProvider */],
                 __WEBPACK_IMPORTED_MODULE_7__providers_utils_utils__["a" /* UtilsProvider */],
-                __WEBPACK_IMPORTED_MODULE_8__providers_utils_preloader__["a" /* PreloaderProvider */]
+                __WEBPACK_IMPORTED_MODULE_8__providers_utils_preloader__["a" /* PreloaderProvider */],
+                __WEBPACK_IMPORTED_MODULE_25__ionic_native_social_sharing__["a" /* SocialSharing */]
             ]
         })
     ], AppModule);
@@ -1211,7 +1347,7 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UtilsProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1306,7 +1442,7 @@ var User = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Park; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__prohibition__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__prohibition__ = __webpack_require__(311);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__address__ = __webpack_require__(506);
 
 
@@ -1415,9 +1551,9 @@ var Address = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthServiceProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(271);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(272);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1529,17 +1665,17 @@ var firebaseConfig = {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(353);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(354);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(353);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_utils_utils__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_auth__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_welcome_welcome__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_welcome_welcome__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_login_login__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_favourites_favourites__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_search_search__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_settings_settings__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_settings_settings__ = __webpack_require__(206);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1627,15 +1763,14 @@ var MyApp = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */]) === "function" && _a || Object)
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/fzancanaro/Downloads/MyParkApp-master/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)"[class.active]="checkActivePage(p)">\n          <ion-icon name="{{p.icon}}"></ion-icon>\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/fzancanaro/Downloads/MyParkApp-master/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/fzancanaro/Documents/mySydneyPark/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)"[class.active]="checkActivePage(p)">\n          <ion-icon name="{{p.icon}}"></ion-icon>\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/fzancanaro/Documents/mySydneyPark/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_4__providers_utils_utils__["a" /* UtilsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_utils_utils__["a" /* UtilsProvider */]) === "function" && _f || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_5_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_4__providers_utils_utils__["a" /* UtilsProvider */]])
     ], MyApp);
     return MyApp;
-    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=app.component.js.map
@@ -1648,12 +1783,12 @@ var MyApp = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_service_auth_service__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_utils_utils__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__register_register__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__forget_forget__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__forget_forget__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__home_home__ = __webpack_require__(103);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1741,7 +1876,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/login/login.html"*/'<ion-header>\n\n    <ion-navbar color="blue">\n      <ion-title>Login</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding class="background" scroll="false">\n    <form [formGroup]="_loginForm" (ngSubmit)="doLogin()">\n  \n      <ion-list>\n\n        <ion-item>\n          <ion-label color="dark" floating>Email</ion-label>\n          <ion-input type="email" formControlName="email"></ion-input>\n        </ion-item>\n  \n        <ion-item>\n          <ion-label color="dark" floating>Password</ion-label>\n          <ion-input type="password" formControlName="password"></ion-input>\n        </ion-item>\n      </ion-list>\n  \n      <div padding>\n        <button ion-button block color="lightprimary" class="login" type="submit" [disabled]="!_loginForm.valid">Sign In</button>\n      </div>\n  \n    </form>\n  \n    <ion-grid text-center>\n      <ion-row>\n        <ion-col>\n          <a href="#" class="login-options" (click)="navForget()">Forgot Password</a>\n        </ion-col>\n        <ion-col>\n          <a href="#" class="login-opitons" (click)="navRegister()">Register</a>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  \n    <div padding>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-4>\n            <button ion-button color="facebook" block class="btn-facebook" (click)="doSocialLogin(\'facebook\')">\n              <ion-icon name="logo-facebook" md="logo-facebook"></ion-icon>\n            </button>\n          </ion-col>\n          <ion-col col-4>\n            <button ion-button color="twitter" block class="btn-twitter" (click)="doSocialLogin(\'twitter\')">\n              <ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon>\n            </button>\n          </ion-col>\n          <ion-col col-4>\n            <button ion-button color="google" block class="btn-gplus" (click)="doSocialLogin(\'google\')">\n              <ion-icon ios="logo-google" md="logo-google"></ion-icon>\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n      <!--  <button ion-button color="google" block icon-left margin-bottom (click)="doSocialLogin(\'google\')">\n        <ion-icon ios="logo-google" md="logo-google"></ion-icon>\n        Login with Google\n      </button> -->\n      <!-- <div class="row">\n        <div class="column">\n          <button (click)="doSocialLogin(\'google\')">\n            <img src="../../assets/icon/google+_icon.png">\n          </button>\n        </div>\n        <div class="column">\n          <button (click)="doSocialLogin(\'facebook\')">\n            <img src="../../assets/icon/facebook-icon1.png">\n          </button>\n        </div>\n        <div class="column">\n          <button (click)="doSocialLogin(\'twitter\')">\n            <img src="../../assets/icon/twitter_icon.png">\n          </button>\n        </div>\n      </div> -->\n    </div>  \n  </ion-content>'/*ion-inline-end:"/Users/fzancanaro/Downloads/MyParkApp-master/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/login/login.html"*/'<ion-header>\n\n    <ion-navbar color="blue">\n      <ion-title>Login</ion-title>\n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding class="background" scroll="false">\n    <form [formGroup]="_loginForm" (ngSubmit)="doLogin()">\n  \n      <ion-list>\n\n        <ion-item>\n          <ion-label color="dark" floating>Email</ion-label>\n          <ion-input type="email" formControlName="email"></ion-input>\n        </ion-item>\n  \n        <ion-item>\n          <ion-label color="dark" floating>Password</ion-label>\n          <ion-input type="password" formControlName="password"></ion-input>\n        </ion-item>\n      </ion-list>\n  \n      <div padding>\n        <button ion-button block color="lightprimary" class="login" type="submit" [disabled]="!_loginForm.valid">Sign In</button>\n      </div>\n  \n    </form>\n  \n    <ion-grid text-center>\n      <ion-row>\n        <ion-col>\n          <a href="#" class="login-options" (click)="navForget()">Forgot Password</a>\n        </ion-col>\n        <ion-col>\n          <a href="#" class="login-opitons" (click)="navRegister()">Register</a>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n  \n    <div padding>\n      <ion-grid>\n        <ion-row>\n          <ion-col col-4>\n            <button ion-button color="facebook" block class="btn-facebook" (click)="doSocialLogin(\'facebook\')">\n              <ion-icon name="logo-facebook" md="logo-facebook"></ion-icon>\n            </button>\n          </ion-col>\n          <ion-col col-4>\n            <button ion-button color="twitter" block class="btn-twitter" (click)="doSocialLogin(\'twitter\')">\n              <ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon>\n            </button>\n          </ion-col>\n          <ion-col col-4>\n            <button ion-button color="google" block class="btn-gplus" (click)="doSocialLogin(\'google\')">\n              <ion-icon ios="logo-google" md="logo-google"></ion-icon>\n            </button>\n          </ion-col>\n        </ion-row>\n      </ion-grid>\n      <!--  <button ion-button color="google" block icon-left margin-bottom (click)="doSocialLogin(\'google\')">\n        <ion-icon ios="logo-google" md="logo-google"></ion-icon>\n        Login with Google\n      </button> -->\n      <!-- <div class="row">\n        <div class="column">\n          <button (click)="doSocialLogin(\'google\')">\n            <img src="../../assets/icon/google+_icon.png">\n          </button>\n        </div>\n        <div class="column">\n          <button (click)="doSocialLogin(\'facebook\')">\n            <img src="../../assets/icon/facebook-icon1.png">\n          </button>\n        </div>\n        <div class="column">\n          <button (click)="doSocialLogin(\'twitter\')">\n            <img src="../../assets/icon/twitter_icon.png">\n          </button>\n        </div>\n      </div> -->\n    </div>  \n  </ion-content>'/*ion-inline-end:"/Users/fzancanaro/Documents/mySydneyPark/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],

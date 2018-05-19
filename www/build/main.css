@@ -70711,15 +70711,15 @@ page-home .card-background-page ion-card .background .background-filter .align-b
 }
 
 page-home .card-background-page ion-card[data-status="true"] {
-  border: 1px solid #060;
+  border: 5px solid #f53d3d;
 }
 
 page-home .card-background-page ion-card[data-status="true"] .img {
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 page-home .card-background-page ion-card[data-status="true"] .card-title {
-  color: darkgreen;
+  color: #f53d3d;
 }
 
 page-home ion-footer {

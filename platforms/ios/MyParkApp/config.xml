@@ -33,6 +33,10 @@
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="CDVIonicKeyboard" />
     </feature>
+    <feature name="SocialSharing">
+        <param name="ios-package" value="SocialSharing" />
+        <param name="onload" value="true" />
+    </feature>
     <name>MyParkApp</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
@@ -99,8 +103,4 @@
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
-    <feature name="SocialSharing">
-        <param name="ios-package" value="SocialSharing" />
-        <param name="onload" value="true" />
-    </feature>
 </widget>

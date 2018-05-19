@@ -6,25 +6,22 @@
 
   <ion-content class="background-page">
 
-      <ion-fab top right edge>
-        <button ion-fab mini color="danger">
-          <ion-icon small name="md-share"></ion-icon>
+    <ion-fab top right edge>
+      <button ion-fab mini color="danger">
+        <ion-icon small name="md-share"></ion-icon>
+      </button>
+      <ion-fab-list>
+        <button ion-fab (click)="facebookShare(parkDetails)">
+          <ion-icon name="logo-facebook"></ion-icon>
         </button>
-        <ion-fab-list>
-          <button ion-fab>
-            <ion-icon name="logo-facebook"></ion-icon>
-          </button>
-          <button ion-fab>
-            <ion-icon name="logo-twitter"></ion-icon>
-          </button>
-          <button ion-fab>
-            <ion-icon name="logo-vimeo"></ion-icon>
-          </button>
-          <button ion-fab>
-            <ion-icon name="logo-googleplus"></ion-icon>
-          </button>
-        </ion-fab-list>
-      </ion-fab>
+        <button ion-fab (click)="twitterShare(parkDetails)">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </button>
+        <button ion-fab (click)="instagramShare(parkDetails)">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </button>
+      </ion-fab-list>
+    </ion-fab>
     
       <ion-card class="adv-map">
         <ion-card-header text-wrap class="park-name">

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { UtilsProvider } from '../../providers/utils/utils';
 import { PreloaderProvider } from './../../providers/utils/preloader';
 import { AuthServiceProvider } from './../../providers/auth-service/auth-service';
@@ -10,6 +10,8 @@ import { Prohibition } from '../../models/prohibition';
 import { Facility } from './../../models/facility';
 import { ReviewPage } from '../review/review';
 import { SocialSharing } from '@ionic-native/social-sharing';
+
+
 
 @IonicPage()
 @Component({
@@ -25,7 +27,8 @@ export class ParkDetailsPage {
     public _dbService : DbServiceProvider, 
     public _authService : AuthServiceProvider,
     private _utilsService : UtilsProvider,
-    private _preloader : PreloaderProvider) {
+    private _preloader : PreloaderProvider, 
+    public _platform : Platform) {
       this.parkDetails = navParams.data;
     }
 
@@ -89,4 +92,134 @@ export class ParkDetailsPage {
     this.navCtrl.push(ReviewPage)
     console.log("ReviewPage pressed!");
   }
+  // facebook share configuration
+  facebookShare(parkDetails : Park) {
+    let image : string = parkDetails.images[0].imageURL;
+    let url : string = parkDetails.contact.officialWebsite;
+
+    if(this._platform.is("ios")) {
+      this.socialSharing.canShareVia('com.apple.social.facebook',null, null, image, url).then(() => {
+        this.facebookIosShare(image, url);
+      })
+      .catch(() => {
+        this._utilsService.showToast("Facebook not available");
+      });
+    }
+    else if(this._platform.is("android")) {
+      this.socialSharing.canShareVia('com.facebook.katana',null, null, null, url).then(() => {
+        this.facebookAndroidShare(url);
+      })
+      .catch(() => {
+        this._utilsService.showToast("Facebook not available!");
+      });
+    }
+    else {
+      console.error("Facebook share not available in this platform");
+      this._utilsService.showToast("Share not supported in this platform");
+    }
+  }
+
+  facebookIosShare(image : string, url : string) {
+    this.socialSharing.shareViaFacebook(null, image , url).then(() => {
+      console.log("shareViaFacebook: Success");
+      this._utilsService.showToast("Sharing Success!");
+    }).catch((er) => {
+      console.error("shareViaFacebook: failed");
+      this._utilsService.showToast("Sharing failed!");
+    });
+  }
+
+  facebookAndroidShare(url : string) {
+    this.socialSharing.shareViaFacebook(null, null , url).then(() => {
+      console.log("shareViaFacebook: Success");
+      this._utilsService.showToast("Sharing Success!");
+    }).catch((er) => {
+      console.error("shareViaFacebook: failed");
+      this._utilsService.showToast("Sharing failed!");
+    });
+  }
+
+    // Twitter share configuration
+    twitterShare(parkDetails : Park) {
+      let url : string = parkDetails.contact.officialWebsite;
+      let message : string = "Check this Park features! It is awsome!";
+  
+      if(this._platform.is("ios")) {
+        // this.socialSharing.canShareVia('com.apple.social.twitter',message, null, null, null).then(() =>  {
+        //   this.twitterIosShare(message);
+        // })
+        // .catch(() =>  {
+        //   this._utilsService.showToast("Twitter not available");
+        // })
+        this.twitterIosShare(message, url);
+      }
+      else if(this._platform.is("android")) {
+        this.socialSharing.canShareVia('twitter',message,null,null,url).then(() => {
+          this.twitterAndroidShare(message, url);
+        })
+        .catch(() => {
+          this._utilsService.showToast("Twitter not available!");
+        });
+      }
+      else {
+        console.error("Twitter share not available in this platform");
+        this._utilsService.showToast("Share not supported in this platform");
+      }
+    }
+  
+    twitterAndroidShare(message : string, url : string) {
+      this.socialSharing.shareViaTwitter(message, null , url).then(() => {
+        console.log("shareViaTwitter: Success");
+        this._utilsService.showToast("Sharing Success!");
+      }).catch((er) => {
+        console.error("shareViaTwitter: failed");
+        this._utilsService.showToast("Sharing failed!");
+      });
+    }
+    twitterIosShare(message : string, url : string) {
+      this.socialSharing.shareViaTwitter(message, null, url).then(() => {
+        console.log("shareViaTwitter: Success");
+        this._utilsService.showToast("Sharing Success!");
+      }).catch((er) => {
+        console.error("shareViaTwitter: failed");
+        this._utilsService.showToast("Sharing failed!");
+      });
+    }
+
+    // Instagram share configuration
+    instagramShare(parkDetails : Park) {
+      let image : string = parkDetails.images[0].imageURL;
+
+      if(this._platform.is("ios")) {
+        this.socialSharing.canShareVia('instagram', null, null, image, null).then(() =>  {
+          this.instagramSharing(image);
+        })
+        .catch(() => {
+          this._utilsService.showToast("Instagram not available");
+        });
+      }
+      else if(this._platform.is("android")) {
+        this.socialSharing.canShareVia('instagram', null, null, image, null).then(() => {
+          this.instagramSharing(image);
+        })
+        .catch(() => {
+          this._utilsService.showToast("Instagram not available!");
+        });
+      }
+      else {
+        console.error("Instagram share not available in this platform");
+        this._utilsService.showToast("Share not supported in this platform");
+      }
+    }
+  
+    instagramSharing(image : string) {
+        this.socialSharing.shareViaInstagram(null, image).then(() => {
+        console.log("shareViaInstagram: Success");
+        this._utilsService.showToast("Sharing Success!");
+      }).catch((er) => {
+        console.error("shareViaInstagram: failed");
+        this._utilsService.showToast("Sharing failed!");
+      });
+    }
+
 }

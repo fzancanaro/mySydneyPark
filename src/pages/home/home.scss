@@ -60,12 +60,12 @@ page-home {
         }
       }  
       ion-card[data-status="true"] {
-        border: 1px solid color($colors, darkgreen);
+        border: 5px solid color($colors, danger);
         .img {
-          opacity: 0.5;
+          opacity: 0.8;
         }
         .card-title {
-          color: darkgreen;
+          color: color($colors, danger);
         }
       }
     }
