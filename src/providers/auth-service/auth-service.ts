@@ -6,7 +6,7 @@ import firebase from "firebase";
 /*
   Generated class for the AuthServiceProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
+  See https://angular.io/guide/dependendb-service.tscy-injection for more info on providers
   and Angular DI.
 */
 @Injectable()

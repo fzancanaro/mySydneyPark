@@ -7,6 +7,7 @@ import { UtilsProvider } from '../../providers/utils/utils';
 import { RegisterPage } from '../register/register';
 import { ForgetPage } from '../forget/forget';
 import { HomePage } from '../home/home';
+import { ProfilePage } from '../profile/profile';
 
 /**
  * Generated class for the LoginPage page.

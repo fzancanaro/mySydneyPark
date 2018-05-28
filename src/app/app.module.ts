@@ -28,6 +28,9 @@ import { SettingsPage } from '../pages/settings/settings';
 import { SearchPage } from '../pages/search/search';
 import { ReviewPage } from '../pages/review/review';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ProfilePage } from '../pages/profile/profile';
+import { ProfileViewPage } from '../pages/profile-view/profile-view';
 
 
 
@@ -44,14 +47,17 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     FavouritesPage,
     SettingsPage,
     SearchPage,
-    ReviewPage
+    ReviewPage,
+   ProfilePage,
+   ProfileViewPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -66,7 +72,9 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     FavouritesPage,
     SettingsPage,
     SearchPage,
-    ReviewPage
+    ReviewPage,
+    ProfilePage,
+    ProfileViewPage
   ],
   providers: [
     StatusBar,

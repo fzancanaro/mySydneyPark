@@ -13,6 +13,10 @@ import { FavouritesPage } from '../pages/favourites/favourites';
 import { SearchPage } from '../pages/search/search';
 import { SettingsPage } from '../pages/settings/settings';
 import { app } from 'firebase/app';
+import { NgModule } from '@angular/core';
+import { ProfilePage } from '../pages/profile/profile';
+import { ProfileViewPage } from '../pages/profile-view/profile-view';
+
 
 
 @Component({
@@ -44,6 +48,7 @@ export class MyApp {
       { title: 'Login', icon:'log-in',component: LoginPage },
       { title: 'Favourites', icon:'heart',component: FavouritesPage },
       { title: 'Settings', icon:'contact',component: SettingsPage},
+      { title: 'Profile', icon:'contact', component: ProfileViewPage},
       { title: 'Log out', icon:'log-out', component: LoginPage}
      
     ];

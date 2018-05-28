@@ -5,6 +5,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 import { UtilsProvider } from "../../providers/utils/utils";
 import { HomePage } from '../home/home';
+import { ProfilePage } from '../profile/profile';
 
 @IonicPage()
 @Component({
@@ -34,7 +35,7 @@ export class RegisterPage {
       .then((user) => {
         this.utils.showToast('User created successfully!');
         console.log(user.email+" account created successfully!")
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(ProfilePage);
       })
       .catch(error => console.log(error));
   }

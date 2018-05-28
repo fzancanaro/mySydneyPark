@@ -70827,16 +70827,6 @@ page-park-details .background-page ion-card .adv-map p {
   font-size: 0.7em !important;
 }
 
-page-park-details .background-page ion-card .img {
-  position: relative;
-  padding: 0px;
-}
-
-page-park-details .background-page ion-card .map {
-  position: relative;
-  border: 2px solid #397bd5;
-}
-
 page-park-details .background-page ion-card ion-card-title {
   color: white;
   font-size: 1.4rem;
@@ -70889,6 +70879,45 @@ page-park-details ion-row ion-col .action-button {
   max-width: 100px;
   background-color: yellow;
   color: black;
+}
+
+page-profile-view {
+  /* Profile Cover*/
+}
+
+page-profile-view .profile-view__image-container {
+  background-color: #54D3BF;
+  height: 200px;
+}
+
+page-profile-view .profile-view__image {
+  padding-top: 20px;
+  height: 200px;
+  max-height: 200px;
+}
+
+page-profile-view .support-nav .user-heading {
+  /*background: #387ef5;*/
+  background-image: url("../assets/imgs/material-graphite.jpg");
+  color: #fff;
+  border-radius: 4px 4px 0 0;
+  -webkit-border-radius: 4px 4px 0 0;
+  padding: 5px;
+  text-align: center;
+}
+
+page-profile-view .support-nav .user-heading.round a {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 10px solid rgba(255, 255, 255, 0.3);
+  display: inline-block;
+}
+
+page-profile-view .support-nav .user-heading a img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
 }
 
 page-register {
