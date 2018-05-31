@@ -70845,6 +70845,11 @@ page-park-details .background-page ion-card ion-item.h2 ion-item.p {
   color: white;
 }
 
+page-park-details .background-page #map {
+  width: 100%;
+  height: 300px;
+}
+
 page-park-details .background-page button[fab].fab-map {
   top: calc(100% - 20px);
   z-index: 50;

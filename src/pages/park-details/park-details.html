@@ -75,11 +75,26 @@
         <ion-card-header text-wrap class="park-full-address">
           {{parkDetails.address.fullAddress}}        
         </ion-card-header>
-        <!-- <div class="map">
-          <img src="assets/imgs/advance-card-map-paris.png">
-        </div> -->
-        <!--Map goes here-->
-
+        <!--Start map-->
+        <button ion-button full icon-left (click)="startTracking()" *ngIf="!isTracking">
+          <ion-icon name="locate"></ion-icon>
+          Start Tracking
+        </button>
+      <button ion-button full color="danger" icon-left (click)="stopTracking()" *ngIf="isTracking">
+          <ion-icon name="hand"></ion-icon>
+          Stop Tracking
+      </button>
+     
+      <div #map id="map"></div>
+     
+      <ion-list>
+        <ion-list-header>Previous Tracks</ion-list-header>
+        <ion-item *ngFor="let route of previousTracks">
+          {{ route.finished | date }}, {{ route.path.length }} Waypoints
+          <button ion-button clear item-end (click)="showHistoryRoute(route.path)">View Route</button>
+        </ion-item>
+      </ion-list>
+<!--finish map-->
         
         <ion-card-title>
           <ion-row no-padding>

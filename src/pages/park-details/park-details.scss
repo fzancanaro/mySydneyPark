@@ -57,7 +57,11 @@ page-park-details {
       //   background-color: #393937;
       //   color: white;
       // }
-    
+      #map {
+        width: 100%;
+        height: 300px;
+      }
+
       button[fab].fab-map {
         top: calc(100% - 20px);
         z-index: 50;

@@ -32,6 +32,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ProfilePage } from '../pages/profile/profile';
 import { ProfileViewPage } from '../pages/profile-view/profile-view';
 
+import { Geolocation } from '@ionic-native/geolocation';
+import { IonicStorageModule } from '@ionic/storage';
+
+
 
 
 @NgModule({
@@ -57,7 +61,8 @@ import { ProfileViewPage } from '../pages/profile-view/profile-view';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -84,7 +89,8 @@ import { ProfileViewPage } from '../pages/profile-view/profile-view';
     AuthServiceProvider,
     UtilsProvider,
     PreloaderProvider,
-    SocialSharing
+    SocialSharing,
+    Geolocation 
   ]
 })
 export class AppModule {}
