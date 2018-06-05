@@ -31,7 +31,7 @@
     "@types/googlemaps": "^3.30.8",
     "angular-google-map": "0.0.2",
     "angularfire2": "^5.0.0-rc.6",
-    "cordova-android": "^7.0.0",
+    "cordova-android": "7.1.0",
     "cordova-ios": "4.5.4",
     "cordova-plugin-device": "^2.0.1",
     "cordova-plugin-geolocation": "^4.0.1",

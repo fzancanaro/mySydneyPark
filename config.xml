@@ -89,6 +89,6 @@
         <string>Required to send machine location.</string>
     </edit-config>
     <plugin name="cordova-sqlite-storage" spec="^2.3.2" />
-    <engine name="android" spec="^7.0.0" />
+    <engine name="android" spec="7.1.0" />
     <engine name="ios" spec="4.5.4" />
 </widget>

@@ -24,17 +24,15 @@ declare var google;
   templateUrl: 'park-details.html',
 })
 export class ParkDetailsPage {
+ 
+  addInfoWindow(arg0: any, arg1: any): any {
+    throw new Error("Method not implemented.");
+  }
   @ViewChild('map') mapElement: ElementRef;
   map: any;
-  currentMapTrack = null;
- 
-  isTracking = false;
-  trackedRoute = [];
-  previousTracks = [];
- 
+
   positionSubscription: Subscription;
  
-
   public parkDetails : Park;
   constructor(public navParams : NavParams,
     public navCtrl: NavController, 
@@ -56,7 +54,7 @@ export class ParkDetailsPage {
     this.loadParkDetails();
     this._preloader.hidePreloader();
     this.plt.ready().then(() => {
-      this.loadHistoricRoutes();
+     // this.loadHistoricRoutes();
  
       let mapOptions = {
         zoom: 13,
@@ -71,66 +69,79 @@ export class ParkDetailsPage {
         let latLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
         this.map.setCenter(latLng);
         this.map.setZoom(16);
+        this.addMarker(this.map);
       }).catch((error) => {
         console.log('Error getting location', error);
       });
     });
   }
-  loadHistoricRoutes() {
-    this.storage.get('routes').then(data => {
-      if (data) {
-        this.previousTracks = data;
-      }
+  addMarker(map:any){
+
+    let marker = new google.maps.Marker({
+      map: map,
+      animation: google.maps.Animation.DROP,
+      position: map.getCenter()
     });
-  }
-
-  startTracking() {
-    this.isTracking = true;
-    this.trackedRoute = [];
- 
-    this.positionSubscription = this.geolocation.watchPosition()
-      .pipe(
-        filter((p) => p.coords !== undefined) //Filter Out Errors
-      )
-      .subscribe(data => {
-        setTimeout(() => {
-          this.trackedRoute.push({ lat: data.coords.latitude, lng: data.coords.longitude });
-          this.redrawPath(this.trackedRoute);
-        }, 0);
-      });
- 
-  }
- 
-  redrawPath(path) {
-    if (this.currentMapTrack) {
-      this.currentMapTrack.setMap(null);
+    
+    let content = "<h4>Information!</h4>";
+    
+    this.addInfoWindow(marker, content);  
     }
- 
-    if (path.length > 1) {
-      this.currentMapTrack = new google.maps.Polyline({
-        path: path,
-        geodesic: true,
-        strokeColor: '#ff00ff',
-        strokeOpacity: 1.0,
-        strokeWeight: 3
-      });
-      this.currentMapTrack.setMap(this.map);
-    }
-  }
+  // loadHistoricRoutes() {
+  //   this.storage.get('routes').then(data => {
+  //     if (data) {
+  //       this.previousTracks = data;
+  //     }
+  //   });
+  // }
 
-  stopTracking() {
-    let newRoute = { finished: new Date().getTime(), path: this.trackedRoute };
-    this.previousTracks.push(newRoute);
-    this.storage.set('routes', this.previousTracks);
+  // startTracking() {
+  //   this.isTracking = true;
+  //   this.trackedRoute = [];
+ 
+  //   this.positionSubscription = this.geolocation.watchPosition()
+  //     .pipe(
+  //       filter((p) => p.coords !== undefined) //Filter Out Errors
+  //     )
+  //     .subscribe(data => {
+  //       setTimeout(() => {
+  //         this.trackedRoute.push({ lat: data.coords.latitude, lng: data.coords.longitude });
+  //         this.redrawPath(this.trackedRoute);
+  //       }, 0);
+  //     });
+ 
+  // }
+ 
+  // redrawPath(path) {
+  //   if (this.currentMapTrack) {
+  //     this.currentMapTrack.setMap(null);
+  //   }
+ 
+  //   if (path.length > 1) {
+  //     this.currentMapTrack = new google.maps.Polyline({
+  //       path: path,
+  //       geodesic: true,
+  //       strokeColor: '#ff00ff',
+  //       strokeOpacity: 1.0,
+  //       strokeWeight: 3
+  //     });
+  //     this.currentMapTrack.setMap(this.map);
+  //   }
+  // }
+
+  // stopTracking() {
+  //   let newRoute = { finished: new Date().getTime(), path: this.trackedRoute };
+  //   this.previousTracks.push(newRoute);
+  //   this.storage.set('routes', this.previousTracks);
    
-    this.isTracking = false;
-    this.positionSubscription.unsubscribe();
-    this.currentMapTrack.setMap(null);
-  }
+  //   this.isTracking = false;
+  //   this.positionSubscription.unsubscribe();
+  //   this.currentMapTrack.setMap(null);
+  // }
    
-  showHistoryRoute(route) {
-    this.redrawPath(route);
-  }
+  // showHistoryRoute(route) {
+  //   this.redrawPath(route);
+  // }
   
 
   loadParkDetails() {
