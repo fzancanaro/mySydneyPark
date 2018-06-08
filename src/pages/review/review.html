@@ -1,13 +1,48 @@
 <ion-header>
     <ion-navbar color="blue">
-      <button ion-button menuToggle ion-buttons end>
-        <ion-icon name="menu"></ion-icon>
-      </button>
+      <ion-buttons end >
+        <button ion-button (click)="OpenAddReviewPage()">
+          <ion-icon ios="ios-add" md="md-add"></ion-icon>
+       </button>
+      </ion-buttons>
+  
       <ion-title>Review</ion-title>
     </ion-navbar>
   </ion-header>
 
+  <ion-content class="card-background-page">
 
-<ion-content padding>
+    <ion-card class="insideCard">
+    
+      <ion-card-header>
+        Flavia Zancanaro
+      </ion-card-header>
+    
+      <ion-card-content >
+        The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+        The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+        The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+        <div class=datetime>
+        <ion-datetime displayFormat="MMM DD, h:mm A" [(ngModel)]="myDate"></ion-datetime> </div>
+      </ion-card-content>
+    
+    </ion-card>
 
-</ion-content>
+    <ion-card class="insideCard">
+    
+      <ion-card-header>
+        Cliverson LastName
+      </ion-card-header>
+    
+      <ion-card-content >
+        The British use the term "header", but the American term "head-shot" the English simplerefuse to adopt.The British use the term "header", but the American mjhkbhhjbjhbjhbhjbjhbjhbjhbjh term "head-shot English simply refuse to adopt.
+      
+        <div class="datetime">
+        <ion-datetime displayFormat="MMM DD, h:mm A" [(ngModel)]="myDate"></ion-datetime> </div>
+      </ion-card-content>
+    
+    </ion-card>
+    
+    
+    </ion-content>
+    

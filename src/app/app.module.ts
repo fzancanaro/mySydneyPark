@@ -34,6 +34,7 @@ import { ProfileViewPage } from '../pages/profile-view/profile-view';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { IonicStorageModule } from '@ionic/storage';
+import { AddReviewPage } from '../pages/add-review/add-review';
 
 
 
@@ -52,6 +53,7 @@ import { IonicStorageModule } from '@ionic/storage';
     SettingsPage,
     SearchPage,
     ReviewPage,
+    AddReviewPage,
    ProfilePage,
    ProfileViewPage
   ],
@@ -78,6 +80,7 @@ import { IonicStorageModule } from '@ionic/storage';
     SettingsPage,
     SearchPage,
     ReviewPage,
+    AddReviewPage,
     ProfilePage,
     ProfileViewPage
   ],

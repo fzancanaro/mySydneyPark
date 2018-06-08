@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AddReviewPage } from '../add-review/add-review';
 
 /**
  * Generated class for the ReviewPage page.
@@ -21,5 +22,9 @@ export class ReviewPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReviewPage');
   }
+  myDate: String = new Date().toISOString();
 
+  OpenAddReviewPage() {
+    this.navCtrl.push(AddReviewPage)
+  }
 }
