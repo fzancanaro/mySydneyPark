@@ -76118,7 +76118,7 @@ page-favourites .alt {
 }
 
 page-forget .background {
-  background: url("../assets/imgs/bench.jpeg") no-repeat center center fixed;
+  background: url("../assets/imgs/bench-building-colors.jpg") no-repeat center center fixed;
   -webkit-filter: grayscale(50%);
   filter: grayscale(50%);
   background-size: cover;
@@ -76209,12 +76209,8 @@ page-login {
   /* homescreen background image */
 }
 
-page-login .login-options {
-  text-decoration: none;
-}
-
 page-login .background {
-  background: url("../assets/imgs/bench.jpeg") no-repeat center center fixed;
+  background: url("../assets/imgs/bench-building-colors.jpg") no-repeat center center fixed;
   -webkit-filter: grayscale(50%);
   filter: grayscale(50%);
   background-size: cover;
@@ -76253,6 +76249,12 @@ page-login button {
   margin-right: 10px;
   padding: 10px;
   width: 42px;
+}
+
+page-login .buttons {
+  border-radius: 10%;
+  background-color: "blue";
+  border: 1px solid white;
 }
 
 page-park-details .background-page {
@@ -76413,7 +76415,7 @@ page-register {
 }
 
 page-register .background {
-  background: url("../assets/imgs/bench.jpeg") no-repeat center center fixed;
+  background: url("../assets/imgs/bench-building-colors.jpg") no-repeat center center fixed;
   -webkit-filter: grayscale(50%);
   filter: grayscale(50%);
   background-size: cover;
