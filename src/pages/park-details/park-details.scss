@@ -6,7 +6,8 @@ page-park-details {
         border-radius: 0px;
         background: none;
         box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0), 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0);
-        margin: 10px 10px 0px 10px;
+        margin: 10px auto 0px auto;
+        max-width: 600px;
         .park-name {
           font-size: 1.6rem;
         }
@@ -30,6 +31,9 @@ page-park-details {
             }
           }
         }
+        ion-card-content {
+          padding: 0;
+        }
         ion-slides {
           height: 200px;
           border: 2px solid color($colors, white);
@@ -37,11 +41,28 @@ page-park-details {
         .adv-map p {
           font-size: 0.7em !important;
         }
+        .img {
+          position: relative;
+          //width: 100%;
+          padding: 0px;          
+        }
+        .map {
+          position: relative;
+          border: 2px solid color($colors, blue);
+          height:200px;
+          padding:0;
+        }
+
         ion-card-title {
           color: white;
           font-size: 1.4rem;
         
           ion-row {
+            .map-button {
+              height: 50px;
+              float: right;
+            }
+
             ion-col {
               width: 100%;
               height: 100%;
@@ -57,14 +78,7 @@ page-park-details {
       //   background-color: #393937;
       //   color: white;
       // }
-      #map {
-        width: 100%;
-        height: 300px;
-      }
-      sebm-google-map {
-        height: 250px;
-      }
-
+    
       button[fab].fab-map {
         top: calc(100% - 20px);
         z-index: 50;
@@ -78,6 +92,8 @@ page-park-details {
         ion-list-header {
           background-color: #488aff;
           color: white;
+          border-top: none;
+          margin-bottom: 0px;
         }
         ion-item {
           background-color: #393937;
@@ -92,16 +108,43 @@ page-park-details {
      }
     }
     ion-row {
-    //   height: 30px;
       ion-col {
         .action-button {
           max-width: 100px;
           background-color: yellow;
           color: black;
         }
-    //     height: 100%;
-    //     //display: block;
-    //     vertical-align: middle;
+        .map-action-button {
+          max-width: 100px;
+          background-color: color($colors, secondary);
+          color: black;
+        }
+        .rate {
+          background-color: #488aff;
+        }
+        .user-stars {
+          background: grey;
+          width: 100%;
+          height: 100%;
+          margin: 0 auto;
+          .user-star-rate {
+            font-size: 24pt;
+            display: inline;
+            margin: 5px;
+            ion-icon {
+              color:yellow;
+            }
+          }
+        }
       }
+      ion-col[data-status="true"]{
+        .action-button {
+          color: color($colors,danger);
+        }
+      }
+    }
+    .fav-rev-rate-buttons {
+      max-width: 600px;
+      margin: auto;
     }
   }

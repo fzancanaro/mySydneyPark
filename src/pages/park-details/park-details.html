@@ -6,22 +6,22 @@
 
   <ion-content class="background-page">
 
-    <ion-fab top right edge>
-      <button ion-fab mini color="danger">
-        <ion-icon small name="md-share"></ion-icon>
-      </button>
-      <ion-fab-list>
-        <button ion-fab (click)="facebookShare(parkDetails)">
-          <ion-icon name="logo-facebook"></ion-icon>
+      <ion-fab top right edge>
+        <button ion-fab mini color="danger">
+          <ion-icon small name="md-share"></ion-icon>
         </button>
-        <button ion-fab (click)="twitterShare(parkDetails)">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </button>
-        <button ion-fab (click)="instagramShare(parkDetails)">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </button>
-      </ion-fab-list>
-    </ion-fab>
+        <ion-fab-list>
+          <button ion-fab (click)="facebookShare(parkDetails)">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </button>
+          <button ion-fab (click)="twitterShare(parkDetails)">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </button>
+          <button ion-fab (click)="instagramShare(parkDetails)">
+            <ion-icon name="logo-instagram"></ion-icon>
+          </button>
+        </ion-fab-list>
+      </ion-fab>
     
       <ion-card class="adv-map">
         <ion-card-header text-wrap class="park-name">
@@ -34,7 +34,7 @@
             </div>
           </div>
         </ion-card-header>
-          <ion-slides>
+          <ion-slides text-center autoplay="2000" loop="true" pager="true">
             <ion-slide  *ngFor="let image of parkDetails.images; let i:index">
               <ion-row>
                 <ion-col col-12 class="img">
@@ -44,30 +44,65 @@
             </ion-slide>
           </ion-slides>
           <ion-card-title text-wrap>
-            {{parkDetails.address.suburb}}  -  12 Km away
-          </ion-card-title>   
+            {{parkDetails.address.suburb}}
+          </ion-card-title>
+        <!-- <ion-item actions>
+          <span ion-text item-start color="secondary" class="item-bold">18 min</span>
+          <span ion-text item-start color="subtle">(2.6 mi)</span>
+          <button ion-button color="primary" clear item-end icon-start>
+            <ion-icon name='navigate'></ion-icon>
+            Start
+          </button>
+        </ion-item> -->
+    
       </ion-card>
     
-      <ion-row no-padding>
+      <ion-row class="fav-rev-rate-buttons" no-padding>
         <ion-col text-center>
-          
-          <button class="action-button" ion-button (click)="openReviewPage()" small round icon-start  >
+          <button class="action-button" (click)="openReviews()" ion-button small round icon-start>
             <ion-icon name='chatboxes'></ion-icon>
             Review
           </button>
-       
         </ion-col>
-        <ion-col text-center>
-          <button class="action-button" ion-button small round icon-start>
+        <ion-col text-center *ngIf="parkDetails.userRateHidden === true">
+          <button class="action-button" (click)="openRate(parkDetails)"  ion-button small round icon-start>
             <ion-icon name='star-half'></ion-icon>
             Rate
           </button>
-        </ion-col>    
-        <ion-col text-center>
-          <button class="action-button" ion-button small round icon-start>
+        </ion-col>
+        <ion-col text-center *ngIf="parkDetails.userRateHidden === false">
+          <button class="action-button rate" (click)="openRate(parkDetails)"  ion-button small round icon-start>
+            <ion-icon name='star-half'></ion-icon>
+            Rate
+          </button>
+        </ion-col>       
+        <ion-col text-center *ngIf="parkDetails.addedToFavourites === false">
+          <button class="action-button" (click)="doFavourite(parkDetails)" ion-button small round icon-start>
             <ion-icon name='heart'></ion-icon>
             Favourite
           </button>
+        </ion-col>
+        <ion-col text-center *ngIf="parkDetails.addedToFavourites === true" data-status="true">
+          <button class="action-button" (click)="doFavourite(parkDetails)" ion-button small round icon-start>
+            <ion-icon name='heart'></ion-icon>
+            Favourite
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="parkDetails.userRateHidden === false">
+        <ion-col text-center>
+          <div class="user-stars">
+              <div class="user-star-rate" *ngFor="let starName of parkDetails.userStarRatingArray; let i = index;">
+                  <ion-icon [name]="starName" (click)="ratePark(i)"></ion-icon>
+                </div>
+                <div style="display:block">
+                  <button class="action-button" (click)="removeUserRate()"  ion-button small round icon-start>
+                    <!-- <ion-icon name='star-half'></ion-icon> -->
+                    Clear
+                  </button>
+                </div>
+          </div>
         </ion-col>
       </ion-row>
     
@@ -75,42 +110,32 @@
         <ion-card-header text-wrap class="park-full-address">
           {{parkDetails.address.fullAddress}}        
         </ion-card-header>
-        <!--Start map-->
-        <!-- <button ion-button full icon-left (click)="startTracking()" *ngIf="!isTracking">
-          <ion-icon name="locate"></ion-icon>
-          Start Tracking
-        </button> -->
-      <!-- <button ion-button full color="danger" icon-left (click)="stopTracking()" *ngIf="isTracking">
-          <ion-icon name="hand"></ion-icon>
-          Stop Tracking
-      </button> -->
-     
-      <div #map id="map"></div>
-      
-     
-      <!-- <ion-list>
-        <ion-list-header>Previous Tracks</ion-list-header>
-        <ion-item *ngFor="let route of previousTracks">
-          {{ route.finished | date }}, {{ route.path.length }} Waypoints
-          <button ion-button clear item-end (click)="showHistoryRoute(route.path)">View Route</button>
-        </ion-item>
-      </ion-list> -->
-<!--finish map-->
-        
+        <ion-card-content>
+            <ion-row>
+              <ion-col #map col-12 class="map">                
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
         <ion-card-title>
           <ion-row no-padding>
-            <ion-col>
+            <!-- <ion-col text-center>
                 <span ion-text item-end clear color="secondary" class="item-bold">26 min</span>
             </ion-col>
-            <ion-col>
+            <ion-col text-center>
                 <span ion-text clear color="subtle">(8.1 mi)</span>
+            </ion-col> -->
+            <ion-col text-center>
+              <button class="map-action-button" color="secondary" (click)="getDirections()" ion-button small round icon-start>
+                <ion-icon name='navigate'></ion-icon>
+                Directions
+              </button>
             </ion-col>
-            <ion-col>
+            <!-- <ion-col class="map-button">
                 <button ion-button color="secondary" clear icon-start>
                     <ion-icon name='navigate'></ion-icon>
                     Start
                   </button>
-            </ion-col>
+            </ion-col> -->
           </ion-row>
             <!-- <span ion-text item-start color="secondary" class="item-bold">26 min</span>
             <span ion-text item-start color="subtle">(8.1 mi)</span>
@@ -123,7 +148,7 @@
     
       <ion-list no-border>    
         <ion-list-header text-center>
-          Facilities
+          FACILITIES
         </ion-list-header>    
         <ion-item *ngFor="let facility of parkDetails.facilities">
             <div class="fac-pro-ico">
@@ -139,7 +164,7 @@
     
      <ion-list no-border>    
         <ion-list-header text-center>
-          Prohibitions
+          PROHIBITIONS
         </ion-list-header>    
         <ion-item *ngFor="let prohibition of parkDetails.prohibitions">
             <div class="fac-pro-ico">

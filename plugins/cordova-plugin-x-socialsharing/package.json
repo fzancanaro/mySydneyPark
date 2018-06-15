@@ -1,19 +1,19 @@
 {
-  "_from": "cordova-plugin-x-socialsharing",
+  "_from": "cordova-plugin-x-socialsharing@^5.4.0",
   "_id": "cordova-plugin-x-socialsharing@5.4.0",
   "_inBundle": false,
   "_integrity": "sha1-dKBMGfSgUkmd2moNxtJPwRvzEaY=",
   "_location": "/cordova-plugin-x-socialsharing",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "range",
     "registry": true,
-    "raw": "cordova-plugin-x-socialsharing",
+    "raw": "cordova-plugin-x-socialsharing@^5.4.0",
     "name": "cordova-plugin-x-socialsharing",
     "escapedName": "cordova-plugin-x-socialsharing",
-    "rawSpec": "",
+    "rawSpec": "^5.4.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "^5.4.0"
   },
   "_requiredBy": [
     "#USER",
@@ -21,8 +21,8 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-x-socialsharing/-/cordova-plugin-x-socialsharing-5.4.0.tgz",
   "_shasum": "74a04c19f4a052499dda6a0dc6d24fc11bf311a6",
-  "_spec": "cordova-plugin-x-socialsharing",
-  "_where": "/Users/fzancanaro/Downloads/MyParkApp-master",
+  "_spec": "cordova-plugin-x-socialsharing@^5.4.0",
+  "_where": "/Users/fzancanaro/Desktop/MyParkApp-master",
   "author": {
     "name": "Eddy Verbruggen - @EddyVerbruggen"
   },

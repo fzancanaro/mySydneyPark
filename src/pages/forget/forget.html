@@ -1,25 +1,25 @@
 <ion-header>
 
-    <ion-navbar>
+    <ion-navbar color="blue">
       <ion-title>Reset Password</ion-title>
     </ion-navbar>
   
   </ion-header>
   
   
-  <ion-content class="background">
+  <ion-content padding class="background">
   
     <form [formGroup]="forgetForm" (ngSubmit)="doForget()">
   
       <ion-list>
         <ion-item>
-          <ion-label floating>Email</ion-label>
+          <ion-label color="dark" floating>Email</ion-label>
           <ion-input type="email" formControlName="email"></ion-input>
         </ion-item>
       </ion-list>
   
       <div padding>
-        <button ion-button color="primary" block type="submit" [disabled]="!forgetForm.valid">Forgot my password</button>
+        <button class="button-style" ion-button color="primary" block type="submit" [disabled]="!forgetForm.valid">Forgot my password</button>
       </div>
     </form>
   

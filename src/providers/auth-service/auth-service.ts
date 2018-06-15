@@ -3,12 +3,7 @@ import { Platform } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from "rxjs/Observable";
 import firebase from "firebase";
-/*
-  Generated class for the AuthServiceProvider provider.
 
-  See https://angular.io/guide/dependendb-service.tscy-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class AuthServiceProvider {
 
@@ -31,8 +26,21 @@ export class AuthServiceProvider {
     return this._authService.auth.currentUser.photoURL;
   }
 
+  setUserImage(imageURL : string) {
+    let profile = {
+      displayName: this._authService.auth.currentUser.displayName,
+      photoURL: imageURL
+    }
+    console.log(profile);
+    this._authService.auth.currentUser.updateProfile(profile);
+  }
+
   getUserEmail() : string {
     return this._authService.auth.currentUser.email;
+  }
+
+  getUserCreationDate() : string {
+    return this._authService.auth.currentUser.metadata.creationTime;
   }
 
   googleLogin() {
@@ -51,7 +59,9 @@ export class AuthServiceProvider {
   }
 
   private socialSignIn(provider) {
+    console.log("social sign in");
     if (this.platform.is('cordova')) {
+        console.log("social with cordova");
         return this._authService.auth.signInWithRedirect(provider);
     }
     else {
@@ -60,8 +70,14 @@ export class AuthServiceProvider {
     }
   }
 
+  // Return the list of registered providers for the given email.
+  // If the email was not registered, the provider's array length will be 0.
+  getProvidersForEmail(email : string) : Promise<any> {
+    return this._authService.auth.fetchProvidersForEmail(email);
+  }
+
   // Email / Password Registration
-  emailSignUp( email:string, password:string) : Promise<any> {
+  emailSignUp(email:string, password:string) : Promise<any> {
     return this._authService.auth.createUserWithEmailAndPassword(email, password);
   }
   

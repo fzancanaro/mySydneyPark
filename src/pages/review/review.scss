@@ -1,14 +1,24 @@
 page-review {
-  .datetime{
-    float: right;
+    .date{
+      float: right;
+      padding: 0px 16px 13px 16px;
+    }
+    .card-background-page {
+      background-color: #393937;
+    }
+    .insideCard{
+        background-color: #eaeae5;
+    }
+    ion-icon {
+        font-size: 40px;
+    }
+    .commentsNotFound {
+      position: absolute;
+      text-align: center;
+      color: #fff;
+      font-size: 1em;
+      font-weight: bold;
+      width: 100%;
+    }
   }
-  .card-background-page {
-    background-color: #393937;
-}
-.insideCard{
-  background-color: #eaeae5;
-}
-ion-icon {
-  font-size: 40px;
-}
-}
+  

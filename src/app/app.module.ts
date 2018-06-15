@@ -3,12 +3,14 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { Geolocation } from '@ionic-native/geolocation';
 
+import { IonicStorageModule } from '@ionic/storage';
 import { DbServiceProvider } from '../providers/db-service/db-service';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { UtilsProvider } from '../providers/utils/utils';
 import { PreloaderProvider } from './../providers/utils/preloader';
-
 
 import { firebaseConfig } from "../config/environment";
 import { AngularFireModule } from 'angularfire2';
@@ -23,20 +25,10 @@ import { ForgetPage } from '../pages/forget/forget';
 import { RegisterPage } from '../pages/register/register';
 import { SearchResultPage } from '../pages/search-result/search-result';
 import { ParkDetailsPage } from './../pages/park-details/park-details';
-import { FavouritesPage } from '../pages/favourites/favourites';
 import { SettingsPage } from '../pages/settings/settings';
-import { SearchPage } from '../pages/search/search';
 import { ReviewPage } from '../pages/review/review';
-import { SocialSharing } from '@ionic-native/social-sharing';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ProfilePage } from '../pages/profile/profile';
-import { ProfileViewPage } from '../pages/profile-view/profile-view';
-
-import { Geolocation } from '@ionic-native/geolocation';
-import { IonicStorageModule } from '@ionic/storage';
-import { AddReviewPage } from '../pages/add-review/add-review';
-
-
+import { ReviewAddPage } from './../pages/review-add/review-add';
 
 
 @NgModule({
@@ -49,22 +41,18 @@ import { AddReviewPage } from '../pages/add-review/add-review';
     RegisterPage,
     SearchResultPage,
     ParkDetailsPage,
-    FavouritesPage,
     SettingsPage,
-    SearchPage,
     ReviewPage,
-    AddReviewPage,
-   ProfilePage,
-   ProfileViewPage
+    ReviewAddPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule,
-    AngularFireDatabaseModule,
-    IonicStorageModule.forRoot(),
+    AngularFirestoreModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -76,13 +64,10 @@ import { AddReviewPage } from '../pages/add-review/add-review';
     RegisterPage,
     SearchResultPage,
     ParkDetailsPage,
-    FavouritesPage,
     SettingsPage,
-    SearchPage,
     ReviewPage,
-    AddReviewPage,
-    ProfilePage,
-    ProfileViewPage
+    ReviewAddPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
@@ -93,7 +78,7 @@ import { AddReviewPage } from '../pages/add-review/add-review';
     UtilsProvider,
     PreloaderProvider,
     SocialSharing,
-    Geolocation 
+    Geolocation
   ]
 })
 export class AppModule {}

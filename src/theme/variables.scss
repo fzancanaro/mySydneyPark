@@ -23,7 +23,9 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 
-
+$menu-width: calc(100% - 40%);
+$menu-md-background: #488aff;
+$menu-ios-background: #488aff;
 
 // Named Color Variables
 // --------------------------------------------------
@@ -48,10 +50,10 @@ $colors: (
   darkblue: #02006c,
   lightdark:  #363636,
   darkgreen: #060,
+  yellow: #ff0,
   DodgerBlue :#1E90FF,
   parkBackground: #f2f7c0,
-  altParkBackground: #f9ebc2,
-  yellow:#ff0
+  altParkBackground: #f9ebc2
 );
 
 

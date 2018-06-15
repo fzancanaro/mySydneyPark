@@ -1,23 +1,40 @@
 page-home {
+  ion-header {
+    ion-row{
+      background-color: #393937;
+      color: white;
+      ion-col {
+        height: 60px;
+        p {
+          margin: 5px 0;
+        }
+      }      
+    }
+  }
   .list-ios{
     margin-bottom: 5px;
   }
-  .searchIcon{
-    margin-left: 15px;
-    color: white;
-  }
     .card-background-page {
+        //margin-top: 20px;
         background-color: #393937;
         ion-card {
           position: relative;
           text-align: center;
           border-radius: 5px;
           border: 1px solid color($colors, white);
-
+          
           .img {
             max-width: 800px;
             height: 110px;
           }
+
+          // .img-bg {
+          //   background-image:black;
+          //   width: 800px;
+          //   height: 110px;
+          //   background-position: center;
+          //   position: relative;
+          // }
     
           .card-title {
             position: absolute;
@@ -26,6 +43,7 @@ page-home {
             width: 100%;
             font-weight: bold;
             color: #fff;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
           }
       
           .card-subtitle {
@@ -63,9 +81,17 @@ page-home {
         border: 5px solid color($colors, danger);
         .img {
           opacity: 0.8;
+          //filter: blur(5px);
+          //filter: sepia(100%);
+          //filter: grayscale(100%);
+          //filter: brightness(200%);
+          //filter: contrast(200%);
+          //filter: drop-shadow(8px 8px 10px, white);
+          //filter: hue-rotate(90deg);
+          //filter: saturate(800%);
         }
         .card-title {
-          color: color($colors, danger);
+          color: color($colors,danger);
         }
       }
     }

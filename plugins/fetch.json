@@ -10,15 +10,7 @@
   "cordova-plugin-device": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-splashscreen@^5.0.2"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-ionic-webview": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-ionic-keyboard@^2.0.5"
+      "id": "cordova-plugin-device@^2.0.1"
     },
     "is_top_level": true,
     "variables": {}
@@ -27,6 +19,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-splashscreen@^5.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-ionic-webview": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-ionic-webview@^1.2.0"
     },
     "is_top_level": true,
     "variables": {}
@@ -58,19 +58,11 @@
   "cordova-plugin-geolocation": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-geolocation@4.0.1"
+      "id": "cordova-plugin-geolocation@~4.0.1"
     },
     "is_top_level": true,
     "variables": {
-      "GEOLOCATION_USAGE_DESCRIPTION": "To track your walks"
+      "GEOLOCATION_USAGE_DESCRIPTION": "To get your location"
     }
-  },
-  "cordova-sqlite-storage": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-sqlite-storage"
-    },
-    "is_top_level": true,
-    "variables": {}
   }
 }

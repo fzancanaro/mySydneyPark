@@ -1,4 +1,0 @@
-#Thu May 31 22:13:19 AEST 2018
-base.0=/Users/fzancanaro/Documents/mySydneyPark/platforms/android/app/build/intermediates/transforms/dexMerger/debug/8
-path.0=classes.dex
-renamed.0=classes.dex

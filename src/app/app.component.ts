@@ -1,86 +1,126 @@
 import { Component, ViewChild } from '@angular/core';
-import {Nav, Platform,NavController} from 'ionic-angular';
+import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { App } from 'ionic-angular/components/app/app';
-import { UtilsProvider } from "../providers/utils/utils";
+import { UtilsProvider } from './../providers/utils/utils';
+import { Storage } from '@ionic/storage'
 
 import { AngularFireAuth } from "angularfire2/auth"
-import { WelcomePage } from '../pages/welcome/welcome';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-import { FavouritesPage } from '../pages/favourites/favourites';
-import { SearchPage } from '../pages/search/search';
 import { SettingsPage } from '../pages/settings/settings';
-import { app } from 'firebase/app';
-import { NgModule } from '@angular/core';
-import { ProfilePage } from '../pages/profile/profile';
-import { ProfileViewPage } from '../pages/profile-view/profile-view';
-
+import { WelcomePage } from './../pages/welcome/welcome';
+import { ProfilePage } from './../pages/profile/profile';
 
 
 @Component({
   templateUrl: 'app.html'
 })
+
 export class MyApp {
-  
-  rootPage:any = WelcomePage;
-  @ViewChild(Nav) nav: Nav;
-  activePage:any;
+  firstRun : boolean = false;
+  rootPage:any;
+  @ViewChild(Nav) nav : Nav;
+  activePage : any;
+  pages : Array<{title: string, icon: string, component: any}>;
 
-  pages: Array<{title: string, icon: string, component: any}>;
-  
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public afAuth : AngularFireAuth, public _utilsService:UtilsProvider) {
-    this.initializeApp();
-    const authObserver = afAuth.authState.subscribe(user => {
-      if (user) {
-        this.rootPage = HomePage;
-        authObserver.unsubscribe();
-      } else {
-        this.rootPage = LoginPage;
-        authObserver.unsubscribe();
-      }
-    });
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Home', icon:'home', component: HomePage },
-      { title: 'Search', icon:'search', component: SearchPage },
-      { title: 'Login', icon:'log-in',component: LoginPage },
-      { title: 'Favourites', icon:'heart',component: FavouritesPage },
-      { title: 'Settings', icon:'contact',component: SettingsPage},
-      { title: 'Profile', icon:'contact', component: ProfileViewPage},
-      { title: 'Log out', icon:'log-out', component: LoginPage}
-     
-    ];
+  constructor(public platform: Platform, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen, 
+    public afAuth : AngularFireAuth,
+    public storage : Storage,
+    public _utilsService : UtilsProvider) {
+      
+      // object used to render the menu and give the proper navigation between pages
+      this.pages = [
+        { title: 'Home', icon:'home', component: HomePage },
+        { title: 'Profile', icon:'contact',component: ProfilePage },
+        { title: 'Settings', icon:'settings',component: SettingsPage},
+        { title: 'Log out', icon:'log-out', component: LoginPage}       
+      ];
+      this.activePage = this.pages[0];
 
-    this.activePage = this.pages[0];
+      // read the local storage to identify if it is the first
+      // run of the app after installation.
+      this.storage.ready().then(() => {
+        this.storage.get('first_time').then((val) => {
+          console.log(val);
+          if (val !== null) {
+             console.log('Not app first run');
+             //this._utilsService.showToast("Not app first run");
+          } else {
+            // if the was the first run it will create a register in the local storage
+             console.log('App first run');
+             this.firstRun = true;
+             this.storage.set('first_time', 'done');
+             //this._utilsService.showToast("App first run");
+          }
+
+          // observer to check if user is authenticated
+          const authObserver = afAuth.authState.subscribe(user => {
+            if (user) {
+              // if user is authenticated return Home page
+              this.rootPage = HomePage;
+              authObserver.unsubscribe();
+            } else {
+              // if user is not authenticated and it is first run, it will return Welcome Screen
+              if(this.firstRun === true){
+                this.rootPage = WelcomePage;
+              }
+              else {
+                // if user is not authenticated and it is not the first run, it will return Login Page
+                this.rootPage = LoginPage;
+              }
+              authObserver.unsubscribe();
+            }
+          });
+
+          this.initializeApp();
+        });  
+      });
   }
-
+  ///
+  /// It removes the splash screen to display the first app page.
+  ///
   initializeApp() {
     this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
-  
-}
+        this.statusBar.styleDefault();
+        this.splashScreen.hide();
+     })
+     .catch((err) => {
+       console.log(err.message);
+     });
+  }
 
-
+  // 
+  // Open the right page when selected from the side menu.
+  // 
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     if (page.component==LoginPage){
       this.doLogout();
-     } else{
+      this.activePage = this.pages[0];
+     } 
+     else if(page.component == HomePage) {
+      this.nav.setRoot(page.component);
+      this.activePage = page;
+     }
+     else{
       this.nav.push(page.component);
-     }    
-     this.activePage = page;
+      this.activePage = page;
+     }
   }
+  // 
+  // return true or false when checking if the current page is the active page.
+  // 
   checkActivePage(page) {
-    return page ==this.activePage;
+    return page == this.activePage;
   }
 
+  // 
+  // Executes the log out function from the option inside the side menu.
+  // 
   doLogout() {
     this.afAuth.auth.signOut()
       .then(() => {
@@ -91,3 +131,4 @@ export class MyApp {
       .catch(err =>console.log(err))
   }
 }
+

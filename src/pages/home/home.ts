@@ -1,14 +1,11 @@
-import { Facility } from './../../models/facility';
-import { User } from './../../models/user';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
 import { DbServiceProvider } from "../../providers/db-service/db-service";
-import { UtilsProvider } from "../../providers/utils/utils";
 import { PreloaderProvider } from './../../providers/utils/preloader';
-import { LoginPage } from '../login/login';
 import { SearchResultPage } from '../search-result/search-result';
-import { SearchPage } from '../search/search';
+import { Facility } from './../../models/facility';
+import { User } from './../../models/user';
 
 
 @Component({
@@ -27,7 +24,6 @@ export class HomePage {
   constructor(public navCtrl: NavController, 
     public _dbService : DbServiceProvider, 
     public _authService : AuthServiceProvider,
-    private _utilsService : UtilsProvider,
     private _preloader : PreloaderProvider) {
     }
 
@@ -52,6 +48,7 @@ export class HomePage {
       console.log(this._authService.getUserEmail());
       this._dbService.getDocument(this.collection, this._authService.getUserEmail())
       .then(data => {
+        console.log(data.data());
         this.userModel.parseToUserModel(data);
         console.log(this.userModel);
       })
@@ -81,16 +78,6 @@ export class HomePage {
       .catch(err =>console.log(err))
     }
   
-    doLogout() {
-      this._authService.signOut()
-        .then(() => {
-          this._utilsService.showToast('You have been successfully logged out!');
-          console.log("User logged out!");
-          this.navCtrl.setRoot(LoginPage);
-        })
-        .catch(err =>console.log(err))
-    }
-
     selectFacility(facility : Facility) {
       let listItemIndex : number = undefined;
       this.filterList.forEach((item : Facility, index : number) => {
@@ -143,9 +130,4 @@ export class HomePage {
       //test = test.replace(/\s/g, '');
       console.log("searched pressed!");
     }
-
-    openSearchPage() {
-      this.navCtrl.push(SearchPage)
-    }
-
 }

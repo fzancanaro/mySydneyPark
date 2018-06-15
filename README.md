@@ -13,7 +13,7 @@ This is the official MyPark demo app, showcasing a variety of Ionic Framework co
 * Detail Park Search
 * Search Page
 * Review Page
-* Favoutites Page
+* Favourites Page
 * Settings Page
 
 

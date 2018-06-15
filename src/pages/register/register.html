@@ -4,34 +4,35 @@
       <ion-title>Register</ion-title>
     </ion-navbar>
   
-</ion-header>
-   
-  <ion-content class="background" scroll="false">
-    <form [formGroup]="registerForm" (ngSubmit)="doRegister()">
+</ion-header>  
   
-      <ion-list>
+<ion-content padding class="background">
 
-          <ion-item>
-              <ion-label color="dark" floating>Name</ion-label>
-              <ion-input type="text" ></ion-input>
-            </ion-item>
+  <form [formGroup]="registerForm" (ngSubmit)="doRegister()">
 
-        <ion-item>
-          <ion-label color="dark" floating>Email</ion-label>
-          <ion-input type="email" formControlName="email"></ion-input>
-        </ion-item>
-  
-        <ion-item>
-          <ion-label color="dark" floating>Password</ion-label>
-          <ion-input type="password" formControlName="password"></ion-input>
-        </ion-item>
-   
-      </ion-list>
-  
-      <div padding>
-        <button ion-button color="primary" block type="submit" [disabled]="!registerForm.valid">Register</button>
-      </div>
-  
-    </form>
-  
-  </ion-content>
+    <ion-list>
+      
+      <ion-item>
+        <ion-label color="dark" floating>Username</ion-label>
+        <ion-input type="text" formControlName="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="dark" floating>Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="dark" floating>Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div padding>
+      <button class="button-style" ion-button color="primary" block type="submit" [disabled]="!registerForm.valid">Register</button>
+    </div>
+
+  </form>
+
+</ion-content>
