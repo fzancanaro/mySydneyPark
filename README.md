@@ -27,7 +27,7 @@ This is the official MyPark demo app, showcasing a variety of Ionic Framework co
 
 _Note: You may need to add “sudo” in front of any global commands to install the utilities._
 
-<img src="https://media.giphy.com/media/5eFuOxlzhQxosANscE/giphy.gif"  />
+<img src="https://media.giphy.com/media/2tMYtENpCPZZPePbrX/giphy.gif"  />
 
 ## Deploying
 

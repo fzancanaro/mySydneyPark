@@ -1,0 +1,4 @@
+#Fri Jun 15 14:06:08 AEST 2018
+base.0=/Users/fzancanaro/Desktop/MyParkApp-master/platforms/android/app/build/intermediates/transforms/dexMerger/debug/7
+path.0=classes.dex
+renamed.0=classes.dex
