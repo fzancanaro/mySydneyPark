@@ -29,9 +29,9 @@ _Note: You may need to add “sudo” in front of any global commands to install
 
 <img src="https://media.giphy.com/media/2tMYtENpCPZZPePbrX/giphy.gif"  />
 
-![Demo](https://media.giphy.com/media/2tMYtENpCPZZPePbrX/giphy.gif)
+![Demo](https://media.giphy.com/media/2tMYtENpCPZZPePbrX/giphy.gif )
 
-
+![demo](MyPark.gif width="40" height="40")
 
 ## Deploying
 
